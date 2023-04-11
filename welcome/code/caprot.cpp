@@ -22,7 +22,7 @@ int main (int argc, char* argv[]){
 	if (num > 0) {	
 		for (int i = 0; i < len; i++) {
 			if (isupper(original[i])) {
-				str[i] = tolower(str[i]);
+			
 			//cout << i << endl; 
 				if ((i+num) < len) {
 					str[i+num] = toupper(str[i+num]);
@@ -42,7 +42,7 @@ int main (int argc, char* argv[]){
 	else {
 		for (int i = 0; i < len; i++) {
 			if (isupper(original[i])) {
-				str[i] = tolower(str[i]);
+			
 				if (((i+num) < 0)&& (i+num) < len) {
 					str[i+num+len] = toupper(str[i+num+len]);
 				}
