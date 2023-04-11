@@ -12,8 +12,8 @@ if (argc != 2) {
 	string str;
 	getline(cin,str);
 	string original = str;
-	int num = atoi(argv[1]);
 	int len = str.size();
+	int num = atoi(argv[1])%len;
 
 	for (int i = 0; i < len; i++) {
 		str[i] = tolower(str[i]);
@@ -29,7 +29,7 @@ if (num > 0) {
 			//cout << i +num << endl;
 			}
 			else {
-				str[(i%len+num%len)%len] = toupper(str[(i%len+num%len)%len]);
+				str[(i%len+num)%len] = toupper(str[(i%len+num)%len]);
 			//cout << (i+num)%len << endl;
 			}
 
