@@ -6,9 +6,9 @@
 using namespace std;
 
 int main (int argc, char* argv[]){
-if (argc != 2) {
-	exit (1);
-}
+	if (argc != 2) {
+		exit (1);
+	}
 	string str;
 	getline(cin,str);
 	string original = str;
@@ -19,27 +19,47 @@ if (argc != 2) {
 		str[i] = tolower(str[i]);
 	}
 
-if (num > 0) {	
-	for (int i = 0; i < len; i++) {
-		if (isupper(original[i])) {
-			str[i] = tolower(str[i]);
+	if (num > 0) {	
+		for (int i = 0; i < len; i++) {
+			if (isupper(original[i])) {
+				str[i] = tolower(str[i]);
 			//cout << i << endl; 
-			if ((i+num) < len) {
-				str[i+num] = toupper(str[i+num]);
-			//cout << i +num << endl;
-			}
-			else {
-				str[(i%len+num)%len] = toupper(str[(i%len+num)%len]);
-			//cout << (i+num)%len << endl;
-			}
+				if ((i+num) < len) {
+					str[i+num] = toupper(str[i+num]);
+				//cout << i +num << endl;
+				}
+				else {
+					str[(i%len+num)%len] = toupper(str[(i%len+num)%len]);
+				//cout << (i+num)%len << endl;
+				}
 
 
+
+			}			
 		}
 
 	}
+	else {
+		for (int i = 0; i < len; i++) {
+			if (isupper(original[i])) {
+				str[i] = tolower(str[i]);
+				if (((i+num) < 0)&& (i+num) < len) {
+					str[i+num+len] = toupper(str[i+num+len]);
+				}
+				else if ((i+num) < len) {
+					str[i+num] = toupper(str[i+num]);
+				}
+				else {
+					str[(i%len+num)%len] = toupper(str[(i%len+num)%len]);
+				}
+
+			}
+
+
 	
 }
-else{ 
+
+
 }
 
 	cout << str << endl;
