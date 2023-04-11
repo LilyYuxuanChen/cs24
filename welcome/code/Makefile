@@ -1,4 +1,6 @@
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra 
 CPP = g++
-caprot.o: caprot.cpp
-	$(CPP) $(FLAGS) -c caprot.cpp
+caprot: caprot.cpp
+	$(CPP) $(FLAGS) caprot.cpp -o caprot
+clean: 
+	rm -f caprot
