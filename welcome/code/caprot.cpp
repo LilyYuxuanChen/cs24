@@ -14,6 +14,11 @@ if (argc != 2) {
 	string original = str;
 	int num = atoi(argv[1]);
 	int len = str.size();
+
+	for (int i = 0; i < len; i++) {
+		str[i] = tolower(str[i]);
+	}
+
 if (num > 0) {	
 	for (int i = 0; i < len; i++) {
 		if (isupper(original[i])) {
