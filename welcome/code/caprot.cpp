@@ -24,7 +24,7 @@ if (num > 0) {
 			//cout << i +num << endl;
 			}
 			else {
-				str[(i+num)%len] = toupper(str[(i+num)%len]);
+				str[(i%len+num%len)%len] = toupper(str[(i%len+num%len)%len]);
 			//cout << (i+num)%len << endl;
 			}
 
