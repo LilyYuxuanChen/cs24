@@ -18,7 +18,7 @@ if (num > 0) {
 	for (int i = 0; i < len; i++) {
 		if (isupper(original[i])) {
 			str[i] = tolower(str[i]);
-			cout << i << endl; 
+			//cout << i << endl; 
 			if ((i+num) < len) {
 				str[i+num] = toupper(str[i+num]);
 			//cout << i +num << endl;
