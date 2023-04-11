@@ -6,6 +6,7 @@
 using namespace std;
 
 int main (int argc, char* argv[]){
+	int k = argc;
 /*	string input;
 	getline(cin,input);
 	
