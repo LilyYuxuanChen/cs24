@@ -11,4 +11,27 @@ FibVec* create_fibvec() {
 }
 
 
-// FibVec Function Implementations
+// FibVec Function Implementation
+size_t FibVec::capacity() const {
+	return cap;
+}
+
+size_t FibVec::count() const {
+	return cnt;
+}
+void FibVec::insert(int val, size_t i) {
+	
+}
+int FibVec::lookup(size_t i) const {
+	return data[i];
+}
+int FibVec::pop() {
+	int v = 0;
+	return v;
+}
+void FibVec::push(int val) {
+
+}
+int FibVec::remove(size_t i) {
+	return data[i];
+}

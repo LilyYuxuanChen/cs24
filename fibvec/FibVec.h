@@ -15,12 +15,15 @@ size_t cnt;
 public:
   // Constructor and Destructor
 FibVec() {
+
 	data = new int[1];
 	cap = 1;
 	cnt = 0;
+
 }
 ~Fibvec() {
 	delete [] data;
+
 }
   // Member Functions
 size_t capacity() const {}
