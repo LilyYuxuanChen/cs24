@@ -15,7 +15,7 @@ size_t cnt;
 public:
   // Constructor and Destructor
 FibVec();
-~Fibvec();
+~FibVec();
 
 // Member Functions
 size_t capacity() const;
