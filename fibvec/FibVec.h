@@ -9,10 +9,15 @@ class FibVec {
 
   // Helper Functions
 int* data;
+size_t cap;
+size_t cnt;
+
 public:
   // Constructor and Destructor
-FibVec(int n) {
-	data = new int[n];
+FibVec() {
+	data = new int[1];
+	cap = 1;
+	cnt = 0;
 }
 ~Fibvec() {
 	delete [] data;
