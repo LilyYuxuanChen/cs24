@@ -18,7 +18,7 @@ FibVec::FibVec(){
 	cnt = 0;
 }
 
-FibVec::~Fibvec() {
+FibVec::~FibVec() {
 	delete [] data;
 }
 
