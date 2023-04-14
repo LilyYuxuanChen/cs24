@@ -12,6 +12,16 @@ FibVec* create_fibvec() {
 
 
 // FibVec Function Implementation
+FibVec::FibVec(){
+	data = new int[1];
+	cap = 1;
+	cnt = 0;
+}
+
+FibVec::~Fibvec() {
+	delete [] data;
+}
+
 size_t FibVec::capacity() const {
 	return cap;
 }
