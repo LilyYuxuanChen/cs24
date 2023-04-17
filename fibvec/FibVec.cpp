@@ -23,7 +23,7 @@ FibVec::~FibVec() {
 }
 
 size_t FibVec::fib(size_t n) {
-	if (i == 1) {
+	if (n == 1) {
 		return 1;
 	}
 	else {
@@ -35,9 +35,10 @@ size_t FibVec::fib(size_t n) {
 			a =b;
 			b=c;
 		}
+		return a;
 		
 	}
-	return a;
+	
 }
 size_t FibVec::get_fibindex(size_t num) {
 	const double phi = (1+sqrt(5))/2;
