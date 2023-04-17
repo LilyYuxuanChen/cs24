@@ -100,5 +100,5 @@ int FibVec::remove(size_t i) {
 		cap = new_cap;
 	}
 	return val;
-	}
+	
 }
