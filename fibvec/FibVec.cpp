@@ -87,6 +87,7 @@ int FibVec::lookup(size_t i) const {
 int FibVec::pop() {
 	if (cnt ==0) {
 		throw std::underflow_error("underflow");
+	}
 	int val = data[cnt-1];
 	cnt--;
 	if (get_fibindex(cap) > 1 && cnt <= fib(get_fibindex(cap)-2)) {
