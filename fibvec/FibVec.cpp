@@ -1,5 +1,5 @@
 #include "FibVec.h"
-
+#include <cmath>
 // This provides exception types:
 #include <stdexcept>
 
@@ -22,6 +22,28 @@ FibVec::~FibVec() {
 	delete [] data;
 }
 
+size_t FibVec::fib(size_t n) {
+	if (i == 1) {
+		return 1;
+	}
+	else {
+		size_t a = 0;
+		size_t b = 1;
+		size_t c = 0;
+		for (size_t j = 2; j <= n ; j++) {
+			c = a+b;
+			a =b;
+			b=c;
+		}
+		
+	}
+	return a;
+}
+size_t FibVec::get_fibindex(size_t num) {
+	const double phi = (1+sqrt(5))/2;
+	return round(log(phi*num)/log(1.618));
+}
+
 size_t FibVec::capacity() const {
 	return cap;
 }
@@ -34,7 +56,7 @@ void FibVec::insert(int val, size_t i) {
 	throw std::out_of_range("Index out of range");
 	}
 	if (cnt >= cap)	{
-		size_t new_cap = cap +(cap >> 1) +1;
+		size_t new_cap = cap + fib(get_fibindex(cap)+1);
 		int* new_data = new int[new_cap];
 		for (size_t j=0; j < i; j++) {
 			new_data[j] = data[j];

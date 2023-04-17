@@ -18,6 +18,8 @@ FibVec();
 ~FibVec();
 
 // Member Functions
+size_t fib(size_t n);
+size_t get_fibindex(size_t num);
 size_t capacity() const;
 size_t count() const;
 void insert(int val, size_t i);
