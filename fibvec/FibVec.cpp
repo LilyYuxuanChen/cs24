@@ -114,6 +114,7 @@ void FibVec::push(int val) {
 int FibVec::remove(size_t i) {
 	if (cnt == 0) {
 		throw std::underflow_error("underflow");
+	}
 	if (i >= cnt) {
 		throw std::out_of_range("Index out of range");
 	}
