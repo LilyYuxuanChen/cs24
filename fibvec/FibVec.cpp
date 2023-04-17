@@ -123,7 +123,7 @@ int FibVec::remove(size_t i) {
 		data[j] = data[j+1];
 	}
 	cnt--;
-	if (get_fibindex(cap)>= 1 && cnt <= fib(get_fibindex(cap)-2)){
+	if (get_fibindex(cap)> 1 && cnt <= fib(get_fibindex(cap)-2)){
 		size_t new_cap = fib(get_fibindex(cap)-1);
 		int* new_data = new int[new_cap];
 		for (size_t j = 0; j < cnt; j++) {
