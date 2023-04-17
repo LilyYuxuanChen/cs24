@@ -94,4 +94,3 @@ int FibVec::remove(size_t i) {
 		int* new_data = new int[new_cap];
 	}
 }
-}
