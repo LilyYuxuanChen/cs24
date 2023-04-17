@@ -88,7 +88,7 @@ int FibVec::pop() {
 	int val = data[cnt-1];
 	cnt--;
 	if (cnt < cap - 2 && cap > 1) {
-		size_t new_cap = cap >>1;
+		size_t new_cap = fib(get_fibindex(cap)-1);
 		int* new_data = new int[new_cap];
 		for (size_t i = 0; i < cnt; i++) {
 			new_data[i] = data[i];
@@ -113,7 +113,7 @@ int FibVec::remove(size_t i) {
 	}
 	cnt--;
 	if (cnt < cap-2 && cap > 1) {
-		size_t new_cap = cap >> 1;
+		size_t new_cap = fib(get_fibindex(cap)-1);
 		int* new_data = new int[new_cap];
 		for (size_t j = 0; j < cnt; j++) {
 			new_data[j] = data[j];
