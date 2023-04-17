@@ -102,7 +102,7 @@ int FibVec::pop() {
 }
 void FibVec::push(int val) {
 	insert(val, cnt);
-	cnt++;
+	
 	if (cnt>=cap) {
 		cap = fib(get_fibindex(cap)+1);
 	}
