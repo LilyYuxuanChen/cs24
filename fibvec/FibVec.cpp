@@ -31,11 +31,11 @@ void FibVec::resize() {
 		b=a;
 	}
 
-	if(count < b-c) {
+	if(cnt < b-c) {
 		cap = c;
 		int* newData = new int[cap];
 
-		for(size_t j = 0; j < cnt; i++) {
+		for(size_t j = 0; j < cnt; j++) {
 			newData[j] = data[j];
 		}
 
