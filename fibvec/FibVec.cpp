@@ -21,6 +21,30 @@ FibVec::FibVec(){
 FibVec::~FibVec() {
 	delete [] data;
 }
+void FibVec::resize() {
+	size_t a =0;
+	size_t b =1;
+	size_t c =0;
+	while (a< cap){
+		a= b+c;
+		c=b;
+		b=a;
+	}
+
+	if(count < b-c) {
+		cap = c;
+		int* newData = new int[cap];
+
+		for(size_t j = 0; j < cnt; i++) {
+			newData[j] = data[j];
+		}
+
+		delete[] data;
+		data = newData;
+	}
+}
+
+
 
 size_t FibVec::fib(size_t n) {
 	if (n == 1) {
@@ -90,6 +114,7 @@ int FibVec::pop() {
 	}
 	int val = data[cnt-1];
 	cnt--;
+	/*
 	if (get_fibindex(cap) > 1 && cnt <= fib(get_fibindex(cap)-2)) {
 		size_t new_cap = fib(get_fibindex(cap)-1);
 		int* new_data = new int[new_cap];
@@ -99,7 +124,8 @@ int FibVec::pop() {
 		delete[] data;
 		data = new_data;
 		cap = new_cap;
-	}
+	}*/
+	resize();
 	return val;
 	
 }

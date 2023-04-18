@@ -18,6 +18,7 @@ FibVec();
 ~FibVec();
 
 // Member Functions
+void resize();
 size_t fib(size_t n);
 size_t get_fibindex(size_t num);
 size_t capacity() const;
