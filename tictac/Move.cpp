@@ -3,7 +3,7 @@
 #include <sstream>
 #include <string>
 
-using namespace std
+using namespace std;
 // Space for implementing Move functions.
 
 Move::Move(const std::string& input) {
@@ -19,15 +19,15 @@ Move::Move(const std::string& input) {
 }
 
 std::ostream& operator << (std::ostream& stream, const Move& move) {
-	stream << number << " " << player << " ";
-	if (row ==0) {
+	stream << move.number << " " << move.player << " ";
+	if (move.row ==0) {
 		stream << "A";
 	}
-	else if (row ==1) {
+	else if (move.row ==1) {
 		stream << "B";
 	}
 	else {
 		stream << "C";
 	}
-	stream << column;
+	stream << move.column;
 }
