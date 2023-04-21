@@ -19,7 +19,7 @@ Move::Move(const std::string& input) {
 		throw ParseError("number out of range");
 	}
 	else {
-		number = temp[0];
+		number = temp[0]-'0';
 	}
 
 	if (!(iss >> temp)){
