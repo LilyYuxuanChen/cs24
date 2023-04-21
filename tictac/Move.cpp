@@ -15,7 +15,7 @@ Move::Move(const std::string& input) {
 	else if (temp.size() != 1){
 		throw ParseError("wrong size for number");
 	}
-	else if ((temp < 1) || (temp > 9)) {
+	else if ((temp < "1") || (temp > "9")) {
 		throw ParseError("number out of range");
 	}
 	else {
@@ -28,7 +28,7 @@ Move::Move(const std::string& input) {
 	else if (temp.size() != 1) {
 		throw ParseError("wrong size for player");
 	}
-	else if ((toupper(temp) != "X") && (toupper(temp) != "O")){
+	else if ((toupper(temp[0]) != 'X') && (toupper(temp[0]) != 'O')){
 		throw ParseError("player not X or O");
 	}
 	else {
@@ -41,15 +41,15 @@ Move::Move(const std::string& input) {
 	else if (temp.size() != 2) {
 		throw ParseError("wrong size for row/column");
 	}
-	else if (((temp[0]-"A")!= 0) && ((temp[0]-"A")!=1) && ((temp[0]-"A")!=2)){
+	else if (((temp[0]-'A')!= 0) && ((temp[0]-'A')!=1) && ((temp[0]-'A')!=2)){
 		throw ParseError("invalid row");
 	}
-	else if (((temp[1]-"0")!= 1) && ((temp[1]-"0")!= 2) && ((temp[1]-"0")!= 3)){
+	else if (((temp[1]-'0')!= 1) && ((temp[1]-'0')!= 2) && ((temp[1]-'0')!= 3)){
 		throw ParseError("invalid column");
 	}
 	else {
-		row = temp[0] -"A" +1;
-		column = temp[1] -"0";
+		row = temp[0] -'A' +1;
+		column = temp[1] -'0';
 	}
 
 
