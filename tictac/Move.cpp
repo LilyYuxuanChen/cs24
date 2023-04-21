@@ -56,7 +56,7 @@ Move::Move(const std::string& input) {
 		throw ParseError("invalid column");
 	}
 	else {
-		row = temp[0] -'A' +1;
+		row = toupper(temp[0]) -'A' +1;
 		column = temp[1] -'0';
 	}
 
