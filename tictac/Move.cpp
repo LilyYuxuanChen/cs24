@@ -30,4 +30,5 @@ std::ostream& operator << (std::ostream& stream, const Move& move) {
 		stream << "C";
 	}
 	stream << move.column;
+	return stream;
 }
