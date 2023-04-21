@@ -2,6 +2,7 @@
 #include "Move.h"
 #include <sstream>
 #include <string>
+#include <cctype>
 
 using namespace std;
 // Space for implementing Move functions.
@@ -9,6 +10,13 @@ using namespace std;
 Move::Move(const std::string& input) {
 	std::istringstream iss (input);
 	string temp;
+	if (input.size()==0){
+		throw ParseError("Empty String");
+	}
+	if (isspace(input[0])) {
+		throw ParseError("starts with space");
+	}
+
 	if (!(iss >> temp)){
 		throw ParseError("no number");
 	}
