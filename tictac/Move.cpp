@@ -19,7 +19,7 @@ Move::Move(const std::string& input) {
 		throw ParseError("number out of range");
 	}
 	else {
-		number = temp;
+		number = temp[0];
 	}
 
 	if (!(iss >> temp)){
@@ -32,7 +32,7 @@ Move::Move(const std::string& input) {
 		throw ParseError("player not X or O");
 	}
 	else {
-		player = toupper(temp);
+		player = toupper(temp[0]);
 	}
 
 	if (!(iss >> temp)){
