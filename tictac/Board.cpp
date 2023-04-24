@@ -1,17 +1,17 @@
 #include "Errors.h"
 #include "Board.h"
-
+#include <array>
 // Space for implementing Board functions.
-Board::Board() {
+Board::Board() :
 	m_board{{
 		{' ', ' ', ' '},
 		{' ', ' ', ' '},
 		{' ', ' ', ' '}
 		
-	}}
-	m_currentPlayer('X');
-	m_numMoves(0);
-}
+	}},
+	m_currentPlayer('X'),
+	m_numMoves=0
+{}
 
 bool Board::isValidCoord(int row, int col) const{
 	return (row >=0) && (row < 3) && (col >= 0) && (col < 3);
