@@ -15,11 +15,29 @@ int main(int argc, char** argv) {
 
   std::string line;
   std::getline(std::cin, line);
-
+while (cin){
   try {
-    //Move move(line);
-   // std::cout << move << '\n';
+	  Move move(line);
+	  Board board;
+	  board.applyMove(move);
+
+	  if(board.isGameOver()){
+		  cout << "Game Over. Winner: " << board.getWinner() << endl;
+		  break;
+	  }
+    
     return 0;
+  }
+  catch(const ParseError& e) {
+	  if(verbose) {
+		  std::cout << "Parse error: " <<e.what() << '\n':
+	  
+	  }
+	  else {
+		  std::cout << "Parse error.\n";
+	  
+	  }
+	  return 1;
   }
   catch(const InvalidMove& e) {
     if(verbose) {
@@ -31,4 +49,5 @@ int main(int argc, char** argv) {
 
     return 2;
   }
+}
 }
