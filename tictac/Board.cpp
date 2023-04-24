@@ -81,4 +81,13 @@ bool Board::isValidMove(const Move& move) const {
 	}
 	return true;
 }
+bool Board::isGameOver() const {
+	if (m_numMoves == 9) {
+		return true;
+	}
+	if (hasPlayerWon('X') || hasPlayerWon('O')){
+		return true;
+	}
+	return false;
+}
 
