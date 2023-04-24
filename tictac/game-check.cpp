@@ -17,9 +17,9 @@ int main(int argc, char** argv) {
 
   std::string line;
   std::getline(std::cin, line);
-
-  try {
-	 while (cin) {
+while (cin) {
+ try {
+	
 	  Move move(line);
 	  Board board;
 	  board.makeMove(move);
@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
 		  cout << "Game Over. Winner: " << board.getWinner() << endl;
 		  break;
 	  }
-	 }
+	
     
     return 0;
   }
