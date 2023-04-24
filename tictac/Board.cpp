@@ -1,6 +1,7 @@
 #include "Errors.h"
 #include "Board.h"
 #include <array>
+using namespace std;
 // Space for implementing Board functions.
 Board::Board() :
 	m_board{{

@@ -1,7 +1,7 @@
 #include "Board.h"
 #include "Errors.h"
 #include "Move.h"
-
+using namespace std;
 int main(int argc, char** argv) {
   bool verbose = false;
 
