@@ -14,11 +14,11 @@ public:
 	bool isGameOver() const;
 	char getWinner() const;
 private:
-	array<array<char,3>, 3> m_board;
+	std::array<std::array<char,3>, 3> m_board;
 	char m_currentPlayer;
 	int m_numMoves;
 	bool isValidCoord(int row, int col) const;
 	bool hasPlayerWon(char player) const;
-}
+};
 
 #endif
