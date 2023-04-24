@@ -50,7 +50,8 @@ void Board::makeMove(const Move& move) {
 	if (m_board[move.row][move.column] != ' '){
 		throw InvalidMove("Position is already occupied");
 	}
-	m_board[move.row][move.column] = m_currentPlayer;
+	m_board[move.row][move.column] = move.player;
+	m_currentPlayer = move.player; 
 
 	if(m_currentPlayer == 'X') {
 		m_currentPlayer = 'O';
