@@ -25,8 +25,8 @@ while (cin) {
 	  //Board board;
 	  board.makeMove(move);
 
-	  if(board.isGameOver()){
-		  cout << "Game Over. Winner: " << board.getWinner() << endl;
+	  if(board.isGameOver()){ 
+		  
 		  break;
 	  }
 	
