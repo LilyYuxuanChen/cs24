@@ -17,11 +17,12 @@ int main(int argc, char** argv) {
 
   std::string line;
   std::getline(std::cin, line);
+  Board board;
 while (cin) {
  try {
 	
 	  Move move(line);
-	  Board board;
+	  //Board board;
 	  board.makeMove(move);
 
 	  if(board.isGameOver()){
