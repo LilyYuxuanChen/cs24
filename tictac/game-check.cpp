@@ -19,7 +19,7 @@ while (cin){
   try {
 	  Move move(line);
 	  Board board;
-	  board.applyMove(move);
+	  board.makeMove(move);
 
 	  if(board.isGameOver()){
 		  cout << "Game Over. Winner: " << board.getWinner() << endl;
@@ -30,7 +30,7 @@ while (cin){
   }
   catch(const ParseError& e) {
 	  if(verbose) {
-		  std::cout << "Parse error: " <<e.what() << '\n':
+		  std::cout << "Parse error: " <<e.what() << '\n';
 	  
 	  }
 	  else {
