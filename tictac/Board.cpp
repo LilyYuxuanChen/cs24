@@ -10,7 +10,7 @@ Board::Board() :
 		
 	}},
 	m_currentPlayer('X'),
-	m_numMoves=0
+	m_numMoves(0)
 {}
 
 bool Board::isValidCoord(int row, int col) const{
@@ -53,3 +53,29 @@ void Board::makeMove(const Move& move) {
 	}
 	++m_numMoves;
 }
+char Board::getWinner() const {
+	if (hasPlayerWon('X')) {
+		return 'X';
+	}
+	else if (hasPlayerWon('O')) {
+		return 'O';
+	}
+	else {
+		return ' ';
+	}
+
+}
+
+bool Board::isValidMove(const Move& move) const {
+	if (!isValidCoord(move.row, move.column)) {
+		return false;
+	}
+	if (m_board[move.row][move.column] != ' '){
+		return false;
+	}
+	if (move.player != m_currentPlayer) {
+		return false;
+	}
+	return true;
+}
+
