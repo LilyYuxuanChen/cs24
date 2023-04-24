@@ -14,11 +14,12 @@ int main(int argc, char** argv) {
   }
 
   cout << "Game in progress: New game." << endl;
-
+Board board;
+ while(cin){
   std::string line;
   std::getline(std::cin, line);
-  Board board;
-while (cin) {
+  //Board board;
+//while (cin) {
  try {
 	
 	  Move move(line);
