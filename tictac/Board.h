@@ -10,7 +10,7 @@ class Board {
 public: 
 	Board();
 	bool isValidMove(const Move& move) const;
-	void applyMove(const Move& move);
+	void makeMove(const Move& move);
 	bool isGameOver() const;
 	char getWinner() const;
 private:

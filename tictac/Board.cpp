@@ -33,7 +33,9 @@ bool Board::hasPlayerWon(char player) const {
 	}
 	if(m_board[2][0] == player && m_board[1][1] == player && m_board[0][2] == player) {
 		return true;
+	
 	}
+	return false;
 }
 
 void Board::makeMove(const Move& move) {
