@@ -21,18 +21,22 @@ bool Board::isValidCoord(int row, int col) const{
 bool Board::hasPlayerWon(char player) const {
 	for(int i = 0; i < 3; i++){
 		if(m_board[i][0] == player && m_board[i][1] == player && m_board[i][2] == player){
+			cout << "Game over: " << player << " wins." << endl;
 			return true;
 		}
 		if(m_board[0][i] == player && m_board[1][i] == player && m_board[2][i] == player){
+			cout << "Game over: " << player << " wins." << endl;
 			return true;
 		}
 	}
 
 
 	if(m_board[0][0] == player && m_board[1][1] == player && m_board[2][2] == player) {
+		cout << "Game over: " << player << " wins." << endl;
 		return true;
 	}
 	if(m_board[2][0] == player && m_board[1][1] == player && m_board[0][2] == player) {
+		cout << "Game over: " << player << " wins." << endl;
 		return true;
 	
 	}
@@ -50,9 +54,12 @@ void Board::makeMove(const Move& move) {
 
 	if(m_currentPlayer == 'X') {
 		m_currentPlayer = 'O';
+		cout << "Game in progress: O's turn." << endl;
 	}
 	else {
 		m_currentPlayer = 'X';
+		cout << "Game in progress: X's turn." << endl;
+
 	}
 	++m_numMoves;
 }
@@ -82,12 +89,15 @@ bool Board::isValidMove(const Move& move) const {
 	return true;
 }
 bool Board::isGameOver() const {
-	if (m_numMoves == 9) {
-		return true;
-	}
 	if (hasPlayerWon('X') || hasPlayerWon('O')){
 		return true;
 	}
+
+	if (m_numMoves == 9) {
+		cout << "Game over: Draw." << endl;
+		return true;
+	}
+
 	return false;
 }
 

@@ -13,6 +13,8 @@ int main(int argc, char** argv) {
     std::cout << "> ";
   }
 
+  cout << "Game in progress: New game." << endl;
+
   std::string line;
   std::getline(std::cin, line);
 while (cin){
