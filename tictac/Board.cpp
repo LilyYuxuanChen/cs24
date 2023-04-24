@@ -15,7 +15,8 @@ Board::Board() :
 {}
 
 bool Board::isValidCoord(int row, int col) const{
-	return (row >=0) && (row < 3) && (col >= 0) && (col < 3);
+	//return true;
+	return (row >= 0) && (row < 3) && (col >= 0) && (col < 3);
 }
 
 bool Board::hasPlayerWon(char player) const {
@@ -44,22 +45,22 @@ bool Board::hasPlayerWon(char player) const {
 }
 
 void Board::makeMove(const Move& move) {
-	if(!isValidCoord(move.row, move.column)) {
+	if(!isValidCoord(move.row-1, move.column-1)) {
 		throw InvalidMove("Invalid coordinate");
 	}
-	if (m_board[move.row][move.column] != ' '){
+	if (m_board[move.row-1][move.column-1] != ' '){
 		throw InvalidMove("Position is already occupied");
 	}
-	m_board[move.row][move.column] = move.player;
+	m_board[move.row-1][move.column-1] = move.player;
 	m_currentPlayer = move.player; 
 
 	if(m_currentPlayer == 'X') {
 		m_currentPlayer = 'O';
-		cout << "Game in progress: O's turn." << endl;
+		//cout << "Game in progress: O's turn." << endl;
 	}
 	else {
 		m_currentPlayer = 'X';
-		cout << "Game in progress: X's turn." << endl;
+		//cout << "Game in progress: X's turn." << endl;
 
 	}
 	++m_numMoves;
@@ -79,14 +80,22 @@ char Board::getWinner() const {
 
 bool Board::isValidMove(const Move& move) const {
 	if (!isValidCoord(move.row, move.column)) {
+		cout << "invalid coordinate" << endl;
 		return false;
 	}
 	if (m_board[move.row][move.column] != ' '){
+		cout << "space taken" << endl;
 		return false;
 	}
 	if (move.player != m_currentPlayer) {
+		cout << "invalid player" << endl;
 		return false;
 	}
+	if (move.number != m_numMoves) {
+		cout << "invalid move number" << endl;
+		return false;
+	}
+
 	return true;
 }
 bool Board::isGameOver() const {

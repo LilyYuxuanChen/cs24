@@ -18,9 +18,10 @@ int main(int argc, char** argv) {
 // while(cin){
   std::string line;
   std::getline(std::cin, line);
-  Board board;
+  //Board board;
 while (cin) {
  try {
+	 Board board;
 	
 	  Move move(line);
 	  //Board board;
@@ -31,6 +32,12 @@ while (cin) {
 		 //cout << "gameover" << endl; 
 		  break;
 	  }
+	  if(move.player == 'X') {
+	  	cout << "Game in progress: O's turn." << endl;
+	  }
+	  else {
+		cout << "Game in progress: X's turn." << endl;
+	  }
 
 	  getline(cin, line);
 	  Move move2(line);
@@ -39,6 +46,12 @@ while (cin) {
 	  if(board.isGameOver()){
 		  break;
 	  }
+	  if(move.player == 'X') {
+		                 cout << "Game in progress: O's turn." << endl;
+				          }
+	           else {
+			                  cout << "Game in progress: X's turn." << endl;
+					           } 
 	  
 	  getline(cin, line);
 	  Move move3(line);
@@ -46,6 +59,12 @@ while (cin) {
 	  if (board.isGameOver()) {
 		  break;
 	  }
+	   if(move.player == 'X') {
+		                   cout << "Game in progress: O's turn." << endl;
+				             }
+	             else {
+			                     cout << "Game in progress: X's turn." << endl;
+					               }
 
 	  getline(cin, line);
 	  Move move4(line);
@@ -53,6 +72,13 @@ while (cin) {
 	  if (board.isGameOver()) {
 		  break;
 	  }
+	  //cout << "Game in progress: " << m_currentPlayer << "'s turn." << endl;
+	   if(move.player == 'X') {
+		                   cout << "Game in progress: O's turn." << endl;
+				             }
+	             else {
+			                     cout << "Game in progress: X's turn." << endl;
+					               }
 
 	  getline(cin, line);
 	  Move move5(line);
@@ -60,6 +86,13 @@ while (cin) {
 	  if (board.isGameOver()) {
 		  break;
 	  }
+	  //cout << "Game in progress: " << m_currentPlayer << "'s turn." << endl;
+	  if(move.player == 'X') {
+		                   cout << "Game in progress: O's turn." << endl;
+				             }
+	             else {
+			                     cout << "Game in progress: X's turn." << endl;
+					               }
 
 	  getline(cin, line);
 	  Move move6(line);
@@ -67,8 +100,46 @@ while (cin) {
 	  if (board.isGameOver()) {
 		  break;
 	  }
+	  //cout << "Game in progress: " << m_currentPlayer << "'s turn." << endl;
+	   if(move.player == 'X') {
+		                   cout << "Game in progress: O's turn." << endl;
+				             }
+	             else {
+			                     cout << "Game in progress: X's turn." << endl;
+					               }
+	  getline(cin, line);
+	  Move move7(line);
+	  board.makeMove(move7);
+	  if (board.isGameOver()) {
+		   break;
+          }
+	   if(move.player == 'X') {
+	             cout << "Game in progress: O's turn." << endl;
+	   } else {
+	              cout << "Game in progress: X's turn." << endl;
+										                                                  }
 
 
+	  getline(cin, line);
+	  Move move8(line);
+	  board.makeMove(move8);
+	  if (board.isGameOver()) {
+		  break;
+	  }
+	  if (move.player == 'X') {
+		  cout << "Game in progress: O's turn." << endl;
+	  }
+	  else{
+		  cout << "Game in progress: X's turn." << endl;
+	  
+	  }
+
+	  getline(cin, line);
+	  Move move9(line);
+	  board.makeMove(move9);
+	  if(board.isGameOver()) {
+		  break;
+	  }
 
 		  
 
