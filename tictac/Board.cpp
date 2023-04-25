@@ -127,7 +127,7 @@ void Board::PrintGameResult() const {
 	else if (hasPlayerWon('O')){
 		        cout << "Game over: O wins." << endl;
 	}
-	else if (m_numMoves == 8) {
+	else if (m_numMoves >= 8) {
 		        cout << "Game over: Draw." << endl;
 	}
 	else if (m_numMoves ==0) {
