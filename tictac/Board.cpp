@@ -112,7 +112,7 @@ bool Board::isGameOver() const {
 		return true;
 	}
 
-	if (m_numMoves == 8) {
+	if (m_numMoves == 9) {
 		//cout << "Game over: Draw." << endl;
 		return true;
 	}
