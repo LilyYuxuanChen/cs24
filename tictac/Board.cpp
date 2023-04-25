@@ -55,11 +55,11 @@ void Board::makeMove(const Move& move) {
 		throw InvalidMove("invalid move number");
 	}
 	m_board[move.row-1][move.column-1] = move.player;
-	//if (move.player == m_currentPlayer) {
-	//	throw InvalidMove("invalid player");
-	//}
+	if (move.number != 1 && move.player == m_currentPlayer) {
+		throw InvalidMove("invalid player");
+	}
 	m_currentPlayer = move.player; 
-
+	
 	//if(m_currentPlayer == 'X') {
 	//	m_currentPlayer = 'O';
 		//cout << "Game in progress: O's turn." << endl;
