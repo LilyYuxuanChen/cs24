@@ -131,7 +131,7 @@ void Board::PrintGameResult() const {
 		        cout << "Game over: Draw." << endl;
 	}
 	else if (m_numMoves ==0) {
-		cout << "Game in progress: New Game." << endl;
+		cout << "Game in progress: New game." << endl;
 	}
 	else if (m_currentPlayer == 'X') {
 		        cout << "Game in progress: O's turn." << endl;
