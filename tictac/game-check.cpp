@@ -13,21 +13,28 @@ int main(int argc, char** argv) {
     std::cout << "> ";
   }
 
-  cout << "Game in progress: New game." << endl;
+//  cout << "Game in progress: New game." << endl;
 //Board board;
 // while(cin){
   std::string line;
-  std::getline(std::cin, line);
-  //Board board;
-while (cin) {
+  //std::getline(std::cin, line);
+  Board board;
+  // while(std::getline(std::cin, line)) { ... }
+while (getline(cin,line)) {
  try {
-	 Board board;
+	// Board board;
 	
 	  Move move(line);
 	  //Board board;
+	  if (!board.isGameOver()) {
 	  board.makeMove(move);
+	  }
+	  else {
+		  throw InvalidMove("game already ended");
+	  }
 	  //cout << "finished move" << endl;
 
+	  /*
 	  if(board.isGameOver()){ 
 		 //cout << "gameover" << endl; 
 		  break;
@@ -35,7 +42,7 @@ while (cin) {
 	  if(move.player == 'X') {
 	  	cout << "Game in progress: O's turn." << endl;
 	  }
-	  else {
+	  if(move.player == 'O') {
 		cout << "Game in progress: X's turn." << endl;
 	  }
 
@@ -46,11 +53,11 @@ while (cin) {
 	  if(board.isGameOver()){
 		  break;
 	  }
-	  if(move.player == 'X') {
-		                 cout << "Game in progress: O's turn." << endl;
+	  if(move2.player == 'X') {
+	            cout << "Game in progress: O's turn." << endl;
 				          }
-	           else {
-			                  cout << "Game in progress: X's turn." << endl;
+	  if(move2.player == 'O') {
+	            cout << "Game in progress: X's turn." << endl;
 					           } 
 	  
 	  getline(cin, line);
@@ -59,10 +66,10 @@ while (cin) {
 	  if (board.isGameOver()) {
 		  break;
 	  }
-	   if(move.player == 'X') {
+	   if(move3.player == 'X') {
 		                   cout << "Game in progress: O's turn." << endl;
 				             }
-	             else {
+	   if (move3.player == 'O') {
 			                     cout << "Game in progress: X's turn." << endl;
 					               }
 
@@ -73,7 +80,7 @@ while (cin) {
 		  break;
 	  }
 	  //cout << "Game in progress: " << m_currentPlayer << "'s turn." << endl;
-	   if(move.player == 'X') {
+	   if(move4.player == 'X') {
 		                   cout << "Game in progress: O's turn." << endl;
 				             }
 	             else {
@@ -87,7 +94,7 @@ while (cin) {
 		  break;
 	  }
 	  //cout << "Game in progress: " << m_currentPlayer << "'s turn." << endl;
-	  if(move.player == 'X') {
+	  if(move5.player == 'X') {
 		                   cout << "Game in progress: O's turn." << endl;
 				             }
 	             else {
@@ -101,7 +108,7 @@ while (cin) {
 		  break;
 	  }
 	  //cout << "Game in progress: " << m_currentPlayer << "'s turn." << endl;
-	   if(move.player == 'X') {
+	   if(move6.player == 'X') {
 		                   cout << "Game in progress: O's turn." << endl;
 				             }
 	             else {
@@ -113,7 +120,7 @@ while (cin) {
 	  if (board.isGameOver()) {
 		   break;
           }
-	   if(move.player == 'X') {
+	   if(move7.player == 'X') {
 	             cout << "Game in progress: O's turn." << endl;
 	   } else {
 	              cout << "Game in progress: X's turn." << endl;
@@ -126,7 +133,7 @@ while (cin) {
 	  if (board.isGameOver()) {
 		  break;
 	  }
-	  if (move.player == 'X') {
+	  if (move8.player == 'X') {
 		  cout << "Game in progress: O's turn." << endl;
 	  }
 	  else{
@@ -146,6 +153,7 @@ while (cin) {
 		  
     
     return 0;
+    */
   }
   catch(const ParseError& e) {
 	  if(verbose) {
@@ -170,5 +178,28 @@ while (cin) {
   }
 
 }
+/*
+if (hasPlayerWon('X')){
+	cout << "Game over: X wins." << endl;
+}
+else if (hasPlayerWon('O')){
+	cout << "Game over: O wins." << endl;
+}
+else if (move.number == 9) {
+	cout << "Game over: Draw." << endl;
+}
+else if (move.player == 'X') {
+	cout << "Game in progress: O's turn." << endl;
+}
+else if (move.player == 'O') {
+	cout << "Game in progress: X's turn." << endl;
+}
+else {
+	cout << "Game in progress: New game." << endl;
+}
+*/
+
+board.PrintGameResult();
+
 return 0;
 }

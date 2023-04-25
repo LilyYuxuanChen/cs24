@@ -13,6 +13,7 @@ public:
 	void makeMove(const Move& move);
 	bool isGameOver() const;
 	char getWinner() const;
+	void PrintGameResult() const;
 private:
 	std::array<std::array<char,3>, 3> m_board;
 	char m_currentPlayer;
