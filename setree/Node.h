@@ -11,11 +11,10 @@ class Node{
 	public:
 		Node();
 		Node(string val);
-		~Node:();
+		~Node();
 		Node (const Node& other);
-		int node() const{
-			return *ptr;
-		}
+		int node() const;
+	
 		Node(Node&& other); //move constructor
 
 }

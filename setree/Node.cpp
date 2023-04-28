@@ -9,12 +9,12 @@ Node::Node(){
 
 Node::Node(int v) {
 	this->ptr = new int;
-	*ptr = v;
+	this->ptr = v;
 }
 Node:~Node() {
 	delete ptr;
 }
 Node::Node(Node&& other) {
-	ptr = other.ptr.;
+	this->ptr = other.ptr.;
 	other.ptr = nullptr;
 }
