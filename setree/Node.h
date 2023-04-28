@@ -17,5 +17,5 @@ class Node{
 	
 		Node(Node&& other); //move constructor
 
-}
+};
 #endif
