@@ -1,7 +1,10 @@
 #include "Set.h"
 #include <cstddef>
-#include "Node.h"
 
+
+Set::Set() {
+	mRoot = nullptr;
+}
 size_t Set::clear(){
 	return 0;
 }
