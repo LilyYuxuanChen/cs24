@@ -10,7 +10,7 @@ Node::Node(string val) {
 	value = val;
 	left = nullptr;
 	right = nullptr;
-	coutn = 1;
+	count = 1;
 }
 /*
 
