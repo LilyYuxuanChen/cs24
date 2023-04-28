@@ -2,28 +2,28 @@
 #include <cstddef>
 #include "Node.h"
 
-size_t Node::clear(){
+size_t Set::clear(){
 	return 0;
 }
-bool Node::contains(const std::string& value) const {
+bool Set::contains(const std::string& value) const {
 	return false;
 }
-size_t Node::count() const {
+size_t Set::count() const {
 	return 0;
 }
-void Node::debug() {
+void Set::debug() {
 }
-size_t Node::insert(const std::string& value){
+size_t Set::insert(const std::string& value){
 	return 0;
 }
-const std::string& Node::lookup(size_t n) const {
+const std::string& Set::lookup(size_t n) const {
 	return nullptr;
 }
 
-void Node::print() const{
+void Set::print() const{
 
 }
-size_t Node::remove(const std::string& value) {
+size_t Set::remove(const std::string& value) {
 	return 0;
 }
 
