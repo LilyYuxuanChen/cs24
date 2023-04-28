@@ -1,11 +1,6 @@
 #include "Node.h"
 
-/*Node::Node(){
-	value = NULL;
-	left = nullptr;
-	right = nullptr;
-	//:count = 1;
-}*/
+
 Node::Node(const std::string& val) {
 	value = val;
 	left = nullptr;
@@ -32,26 +27,8 @@ size_t Node::InsertNode(const std::string& value, Node* curr) {
 		}
 		
 	}
-	else (value == curr->value) {
+	else {
 		return 0;
 	}
 }
-/*
-
-Node::Node(int v) {
-	this->ptr = new int;
-	this->ptr = v;
-}*/
-
-/*Node:~Node() {
-	//delete ptr;
-}
-Node::Node(Node&& other) {
-	this->value = other.value;
-	this->left = other.left;
-	this->right = other.right;
-	//this->count = 1;
-	other.ptr = nullptr;
-}
-*/
 

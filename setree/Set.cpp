@@ -10,6 +10,10 @@ Set::Set(const Set& other) {
 
 }
 
+Set::~Set(){
+	delete mRoot;
+}
+
 size_t Set::clear(){
 	return 0;
 }
