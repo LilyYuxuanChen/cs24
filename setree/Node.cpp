@@ -1,11 +1,11 @@
 #include "Node.h"
 
-Node::Node(){
+/*Node::Node(){
 	value = NULL;
 	left = nullptr;
 	right = nullptr;
 	//:count = 1;
-}
+}*/
 Node::Node(const std::string& val) {
 	value = val;
 	left = nullptr;
@@ -19,7 +19,7 @@ size_t Node::InsertNode(const std::string& value, Node* curr) {
 			return 1;
 		}
 		else {
-			insert(value, curr);
+			return insert(value, curr);
 		}
 	}
 	else if (value > curr->value) {
@@ -28,7 +28,7 @@ size_t Node::InsertNode(const std::string& value, Node* curr) {
 			return 1;
 		}
 		else {
-			insert(value, curr);
+			return insert(value, curr);
 		}
 		
 	}
