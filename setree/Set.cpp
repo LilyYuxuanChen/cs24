@@ -9,7 +9,9 @@ Set::Set() {
 Set::Set(const Set& other) {
 
 }
+Set::Set(Set&& other) {
 
+}
 Set::~Set(){
 	delete mRoot;
 }
