@@ -11,8 +11,9 @@ class Node{
 	Node* right;
 	size_t count;
 	public:
-		Node();
-		Node(string val);
+		//Node();
+		Node(const std::string& val);
+		size_t InsertNode(const std::string& value, Node* curr);
 		//~Node();
 		//Node (const Node& other);
 		//int node() const;

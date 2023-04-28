@@ -19,7 +19,7 @@ size_t Node::InsertNode(const std::string& value, Node* curr) {
 			return 1;
 		}
 		else {
-			return insert(value, curr);
+			return InsertNode(value, curr);
 		}
 	}
 	else if (value > curr->value) {
@@ -28,7 +28,7 @@ size_t Node::InsertNode(const std::string& value, Node* curr) {
 			return 1;
 		}
 		else {
-			return insert(value, curr);
+			return InsertNode(value, curr);
 		}
 		
 	}
