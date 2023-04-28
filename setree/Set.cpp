@@ -28,7 +28,7 @@ size_t Set::count() const {
 void Set::debug() {
 }
 size_t Set::insert(const std::string& value){
-	return 0;
+	return mRoot->InsertNode(value, mRoot);
 }
 
 const std::string EMPTY;
