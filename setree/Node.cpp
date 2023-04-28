@@ -1,16 +1,40 @@
 #include "Node.h"
 
 Node::Node(){
-	value = " ";
+	value = NULL;
 	left = nullptr;
 	right = nullptr;
 	//:count = 1;
 }
-Node::Node(string val) {
+Node::Node(const std::string& val) {
 	value = val;
 	left = nullptr;
 	right = nullptr;
 	//count = 1;
+}
+size_t Node::InsertNode(const std::string& value, Node* curr) {
+	if (value < curr->value) {
+		if(left == nullptr) {
+			left = new Node(value);
+			return 1;
+		}
+		else {
+			insert(value, curr);
+		}
+	}
+	else if (value > curr->value) {
+		if (right == nullptr) {
+			right = new Node(value);
+			return 1;
+		}
+		else {
+			insert(value, curr);
+		}
+		
+	}
+	else (value == curr->value) {
+		return 0;
+	}
 }
 /*
 
