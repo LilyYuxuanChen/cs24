@@ -20,7 +20,8 @@ size_t Set::insert(const std::string& value){
 	return 0;
 }
 const std::string& Set::lookup(size_t n) const {
-	return nullptr;
+	return 0;
+
 }
 
 void Set::print() const{
