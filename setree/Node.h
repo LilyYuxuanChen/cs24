@@ -1,7 +1,7 @@
 #ifndef NODE
 #define NODE_H
 #include <cstddef>
-#include <cstring>
+#include <string>
 using namespace std;
 // Use this file to declare your Node type.
 // Implement Node member functions and helper functions in Node.cpp.
