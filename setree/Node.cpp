@@ -9,6 +9,11 @@ Node::Node(const std::string& val) {
 	right = nullptr;
 	//count = 1;
 }
+/*
+Node& operator = (const Node& other) {
+	//delete 
+}
+*/
 size_t Node::InsertNode(const std::string& value, Node* curr) {
 	if (curr == nullptr) {
 		curr = new Node(value);
@@ -33,7 +38,7 @@ size_t Node::InsertNode(const std::string& value, Node* curr) {
 		}
 		
 	}
-	else {
+	else if (curr->value == value){
 		return 0;
 	}
 }
