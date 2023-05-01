@@ -11,7 +11,7 @@ Node::Node(const std::string& val) {
 }
 size_t Node::InsertNode(const std::string& value, Node* curr) {
 	if (curr == nullptr) {
-		curr == new Node(value);
+		curr = new Node(value);
 		return 1;
 	}
 	else if (value < curr->value) {
