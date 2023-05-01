@@ -43,7 +43,7 @@ void Node::PrintNode(Node* curr) {
 	}
 	else if (curr->left == nullptr && curr->right == nullptr) {
 		cout << curr->value;
-		return;
+		//return;
 	}
 	else if (curr->left == nullptr) {
 		cout << "(- " << curr->value << " ";
