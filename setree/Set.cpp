@@ -24,7 +24,12 @@ bool Set::contains(const std::string& value) const {
 	return false;
 }
 size_t Set::count() const {
-	return mRoot->countN(mRoot);
+	if (mRoot == nullptr) {
+		return 0;
+	}
+	else {
+		return mRoot->countN(mRoot);
+	}
 }
 void Set::debug() {
 }
