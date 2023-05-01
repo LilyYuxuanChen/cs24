@@ -14,7 +14,7 @@ Node& operator = (const Node& other) {
 	//delete 
 }
 */
-size_t Node::InsertNode(const std::string& val, Node* curr) {
+size_t Node::InsertNode(const std::string& val, Node*& curr) {
 	if (curr == nullptr) {
 		curr = new Node(val);
 		return 1;
