@@ -14,31 +14,31 @@ Node& operator = (const Node& other) {
 	//delete 
 }
 */
-size_t Node::InsertNode(const std::string& value, Node* curr) {
+size_t Node::InsertNode(const std::string& val, Node* curr) {
 	if (curr == nullptr) {
-		curr = new Node(value);
+		curr = new Node(val);
 		return 1;
 	}
-	else if (value < curr->value) {
+	else if (val < curr->value) {
 		if(left == nullptr) {
-			left = new Node(value);
+			left = new Node(val);
 			return 1;
 		}
 		else {
-			return InsertNode(value, curr->left);
+			return InsertNode(val, curr->left);
 		}
 	}
-	else if (value > curr->value) {
+	else if (val > curr->value) {
 		if (right == nullptr) {
-			right = new Node(value);
+			right = new Node(val);
 			return 1;
 		}
 		else {
-			return InsertNode(value, curr->right);
+			return InsertNode(val, curr->right);
 		}
 		
 	}
-	else if (curr->value == value) {
+	else if (curr->value == val) {
 		return 0;
 	}
 	else {

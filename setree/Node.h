@@ -13,7 +13,7 @@ class Node{
 	public:
 		//Node();
 		Node(const std::string& val);
-		size_t InsertNode(const std::string& value, Node* curr);
+		size_t InsertNode(const std::string& val, Node* curr);
 		void PrintNode(Node* curr);
 		//~Node();
 		//Node (const Node& other);
