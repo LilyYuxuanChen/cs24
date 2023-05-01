@@ -24,7 +24,7 @@ bool Set::contains(const std::string& value) const {
 	return false;
 }
 size_t Set::count() const {
-	return 0;
+	return mRoot->countN(mRoot);
 }
 void Set::debug() {
 }

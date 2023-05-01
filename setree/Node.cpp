@@ -109,3 +109,11 @@ void Node::PrintNode(Node* curr) {
 	}
 	*/
 }
+size_t Node::countN(Node* curr) {
+	if (curr->left == nullptr && curr->right == nullptr) {
+		return 1;
+	}
+	else{
+		return 1 + countN(curr->left) + countN(curr->right);
+	}	
+}
