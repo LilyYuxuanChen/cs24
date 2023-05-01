@@ -39,8 +39,8 @@ size_t Node::InsertNode(const std::string& val, Node*& curr) {
 	}
 */
 	else if (val < curr->value) {
-		if(left == nullptr) {
-			left = new Node(val);
+		if(curr->left == nullptr) {
+			curr->left = new Node(val);
 			return 1;
 		}
 		else {
@@ -48,8 +48,8 @@ size_t Node::InsertNode(const std::string& val, Node*& curr) {
 		}
 	}
 	else if (val > curr->value) {
-		if (right == nullptr) {
-			right = new Node(val);
+		if (curr->right == nullptr) {
+			curr->right = new Node(val);
 			return 1;
 		}
 		else {
