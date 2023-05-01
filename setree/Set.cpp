@@ -47,10 +47,11 @@ const std::string& Set::lookup(size_t n) const {
 
 void Set::print() const{
 	if (mRoot == nullptr) {
-		cout << "-";
+		cout << "-" << endl;
 	}
 	else {
 		mRoot->PrintNode(mRoot);
+		cout << endl;
 	}
 }
 size_t Set::remove(const std::string& value) {
