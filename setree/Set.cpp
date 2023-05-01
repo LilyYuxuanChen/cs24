@@ -28,8 +28,15 @@ size_t Set::count() const {
 void Set::debug() {
 }
 size_t Set::insert(const std::string& value){
-	return mRoot->InsertNode(value, mRoot);
+	if (mRoot == nullptr) {
+		mRoot = new Node(value);
+		return 1;
+	}
+	else {
+		return mRoot->InsertNode(value, mRoot);
+	}
 }
+
 
 const std::string EMPTY;
 const std::string& Set::lookup(size_t n) const {

@@ -6,7 +6,7 @@
 
 int main() {
   Set set;
-
+  cout << set.insert("a");
   std::cout << "This program doesn't do anything interesting yet...\n";
 
   return 0;

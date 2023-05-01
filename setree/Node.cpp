@@ -10,13 +10,17 @@ Node::Node(const std::string& val) {
 	//count = 1;
 }
 size_t Node::InsertNode(const std::string& value, Node* curr) {
-	if (value < curr->value) {
+	if (curr == nullptr) {
+		curr == new Node(value);
+		return 1;
+	}
+	else if (value < curr->value) {
 		if(left == nullptr) {
 			left = new Node(value);
 			return 1;
 		}
 		else {
-			return InsertNode(value, curr);
+			return InsertNode(value, curr->left);
 		}
 	}
 	else if (value > curr->value) {
@@ -25,7 +29,7 @@ size_t Node::InsertNode(const std::string& value, Node* curr) {
 			return 1;
 		}
 		else {
-			return InsertNode(value, curr);
+			return InsertNode(value, curr->right);
 		}
 		
 	}
@@ -34,8 +38,11 @@ size_t Node::InsertNode(const std::string& value, Node* curr) {
 	}
 }
 void Node::PrintNode(Node* curr) {
-	if (left == nullptr && right == nullptr) {
+	if(curr == nullptr) {
 		return;
+	}
+	else if (left == nullptr && right == nullptr) {
+		cout << curr->value;
 	}
 	else if (left == nullptr) {
 		cout << "(- " << curr->value << " ";
