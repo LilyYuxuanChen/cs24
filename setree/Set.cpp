@@ -1,6 +1,7 @@
 #include "Set.h"
 #include <cstddef>
-
+#include <iostream>
+using namespace std;
 
 Set::Set() {
 	mRoot = nullptr;
