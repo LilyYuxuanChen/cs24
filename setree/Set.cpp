@@ -34,6 +34,7 @@ size_t Set::insert(const std::string& value){
 		return 1;
 	}
 	else {
+		cout <<  mRoot->InsertNode(value, mRoot);
 		return mRoot->InsertNode(value, mRoot);
 	}
 }
