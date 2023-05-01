@@ -41,16 +41,16 @@ void Node::PrintNode(Node* curr) {
 	if(curr == nullptr) {
 		return;
 	}
-	else if (left == nullptr && right == nullptr) {
+	else if (curr->left == nullptr && curr->right == nullptr) {
 		cout << curr->value;
 		return;
 	}
-	else if (left == nullptr) {
+	else if (curr->left == nullptr) {
 		cout << "(- " << curr->value << " ";
 		PrintNode(curr->right); 
 		cout << ")";
 	}
-	else if (right == nullptr) {
+	else if (curr->right == nullptr) {
 		cout << "(";
 		PrintNode(curr->left);
 		cout << " " << curr->value << " -)";
