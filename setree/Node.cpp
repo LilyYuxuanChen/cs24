@@ -38,9 +38,13 @@ size_t Node::InsertNode(const std::string& value, Node* curr) {
 		}
 		
 	}
-	else if (curr->value == value){
+	else if (curr->value == value) {
 		return 0;
 	}
+	else {
+		return 5;
+	}
+
 }
 void Node::PrintNode(Node* curr) {
 	if(curr == nullptr) {
