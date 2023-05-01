@@ -1,4 +1,6 @@
 #include "Node.h"
+#include <iostream>
+using namespace std;
 
 
 Node::Node(const std::string& val) {
@@ -31,4 +33,25 @@ size_t Node::InsertNode(const std::string& value, Node* curr) {
 		return 0;
 	}
 }
-
+void Node::PrintNode(Node* curr) {
+	if (left == nullptr && right == nullptr) {
+		return;
+	}
+	else if (left == nullptr) {
+		cout << "(- " << curr->value << " ";
+		PrintNode(curr->right); 
+		cout << ")";
+	}
+	else if (right == nullptr) {
+		cout << "( ";
+		PrintNode(curr->left);
+		cout << " " << curr->value << " -)";
+	}
+	else {
+		cout << "(";
+	        PrintNode(curr->left);
+	        cout << " " << curr->value << " ";
+	        PrintNode(curr->right);
+	        cout << ")";
+	}
+}
