@@ -16,7 +16,8 @@ public:
 		size_t InsertNode(const std::string& val, Node*& curr);
 		void PrintNode(Node* curr);
 		size_t countN(Node* curr);
-		//~Node();
+
+		~Node();
 		//Node (const Node& other);
 		//int node() const;
 	

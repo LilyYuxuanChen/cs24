@@ -14,6 +14,11 @@ Node& operator = (const Node& other) {
 	//delete 
 }
 */
+Node::~Node() {
+	     delete left;
+	     delete right;
+     }
+
 size_t Node::InsertNode(const std::string& val, Node*& curr) {
 	if (curr == nullptr) {
 		curr = new Node(val);
@@ -120,3 +125,56 @@ size_t Node::countN(Node* curr) {
 		return 1 + countN(curr->left) + countN(curr->right);
 	}	
 }
+//size_t Node::lookupN(size_t n, Node* curr) {
+/*
+size_t Node::rm(const std::string& val, Node* curr) {
+	if (curr == nullptr) {
+		//reached end of tree without finding val
+		return 0;
+	}
+	if (curr->value == val) {
+		//found node
+		if (curr->left == nullptr && curr->right == nullptr) {
+			delete curr;
+			return 1;
+		}
+		else if (curr->left == nullptr) {
+			//only one child
+			//use copy constructor
+			return 1;
+		}
+		else if (curr->right == nullptr) {
+			//only one child
+			//use copy constructor
+			return 1;
+		}
+		else {
+			if (curr->left->value < val && curr->left->value > curr->right->value){ 
+				//left child should replace curr
+				return 1;
+			}
+			else{
+				//right child should replace curr
+				return 1;
+			}
+		}
+	}
+	else {
+		//go thru tree
+		if (val < curr->value) {
+			//go to left/right
+		}
+		else {
+
+		}
+
+		
+	}
+}
+*/
+
+
+
+			
+//}
+	
