@@ -34,12 +34,28 @@ size_t Set::insert(const std::string& value){
 		return 1;
 	}
 	else {
-		cout <<  mRoot->InsertNode(value, mRoot);
+		//return inserthelper(value, mRoot);
+		//cout <<  mRoot->InsertNode(value, mRoot);
 		return mRoot->InsertNode(value, mRoot);
 	}
 }
-
-
+/*
+size_t inserthelper(const std::string& value, Node* curr) {
+	if (curr == nullptr) {
+		curr = new Node(value);
+		return 1;
+	}
+	else if (value == curr->value) {
+		return 0;
+	}
+	else if (value < curr->value) {
+		return inserthelper(value, curr->left);
+	}
+	else if (value > curr->value) {
+		return inserthelper(value, curr->right);
+	}
+}
+*/
 const std::string EMPTY;
 const std::string& Set::lookup(size_t n) const {
 	return EMPTY;
