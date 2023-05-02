@@ -18,18 +18,32 @@ Set::Set(const Set& other) {
 	mRoot->right = Set(other.mRoot->right);
 	*/
 //	mRoot = clone(other.mRoot);
-	
+//	
+//	mRoot = clone(other);	
 
 }
 /*
-Node* clone(const Node* node) {
+Node*& clone(Node*& node) {
 	if (node == nullptr) {
 		return node;
 	}
 	else {
-		Node* newNode = new Node(node->value);
+		Node*& newNode = new Node(node->value);
 		newNode->left = clone(node->left);
 		newNode->right = clone(node->right);
+		return newNode;
+	}
+}
+*/
+/*
+Node* clone(const Set& other) {
+	if (other.mRoot == nullptr) {
+		return nullptr;
+	}
+	else {
+		Node* newNode = new Node(other.mRoot->value);
+		newNode->left = clone(Set(other.mRoot->left));
+		newNode->right = clone(Set(other.mRoot->right));
 		return newNode;
 	}
 }

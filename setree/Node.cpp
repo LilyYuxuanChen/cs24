@@ -167,7 +167,8 @@ size_t Node::rm(const std::string& val, Node* curr) {
 	if (curr->value == val) {
 		//found node
 		if (curr->left == nullptr && curr->right == nullptr) {
-			//delete curr;
+			delete curr;
+			curr = nullptr;
 			return 1;
 		}
 		else if (curr->left == nullptr) {
