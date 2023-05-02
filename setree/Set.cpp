@@ -24,12 +24,14 @@ Set::Set(const Set& other) {
 /*
 Node* clone(Node* node) {
 	if (node == nullptr) {
-		return nullptr;
+		return node;
 	}
-	Node* newNode = new Node(node->value);
-	newNode->left = clone(node->left);
-	newNode->right = clone(node->right);
-	return newNode;
+	else {
+		Node* newNode = new Node(node->value);
+		newNode->left = clone(node->left);
+		newNode->right = clone(node->right);
+		return newNode;
+	}
 }
 */
 Set::Set(Set&& other) {

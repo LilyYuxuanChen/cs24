@@ -22,10 +22,10 @@ void Node::ClearN(Node* curr) {
 	if (curr == nullptr) {
 		return;
 	}
-	else if (curr->left == nullptr && curr->right == nullptr) {
-		delete curr;
-		return;
-	}
+//	else if (curr->left == nullptr && curr->right == nullptr) {
+//		delete curr;
+//		return;
+//	}
 	else {
 		ClearN(curr->left);
 		ClearN(curr->right);
