@@ -148,17 +148,26 @@ size_t Node::countN(Node* curr) {
 	}	
 }
 
-
-/*const std::string& Node::lookupN(size_t n, Node* curr) {
-	if ()
-	else if (count == n) {
-		return curr->value
+/*
+const std::string& Node::lookupN(size_t n, Node* curr) {
+	if (curr == nullptr) {
+		return;
 	}
+	else if (countN(curr->left) == n)
+
+
 }
 */
 
 
-
+Node* getLargestVal(Node*& curr) { 
+	if (curr->right == nullptr) {
+		return curr;
+	}
+	else {
+		return getLargestVal(curr->right);
+	}
+}
 size_t Node::rm(const std::string& val, Node*& curr) {
 	if (curr == nullptr) {
 		//reached end of tree without finding val
@@ -187,7 +196,7 @@ size_t Node::rm(const std::string& val, Node*& curr) {
 			curr = nullptr;
 			return 1;
 		}
-		else {
+		else if (curr->right == nullptr) {
 			//only one child on the left
 			Node* temp = curr; 
 			curr = curr->left;
@@ -196,6 +205,18 @@ size_t Node::rm(const std::string& val, Node*& curr) {
 			delete curr;
 			curr = nullptr;
 			return 1;
+		}
+		else {
+			//two children
+			Node* temp = curr;
+			Node* largest = getLargestVal(curr->left);
+			curr = largest;
+			largest = curr;
+			temp = nullptr;
+			delete curr;
+			curr = nullptr;
+			return 1;
+
 		}
 /*		else {
 			if (curr->left->value < val && curr->left->value > curr->right->value){ 

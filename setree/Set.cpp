@@ -8,14 +8,14 @@ Set::Set() {
 }
 Node* myclone(const Node* node) {
 	        if (node == nullptr) {
-			                return nullptr;
-					        }
-		        else {
-				                Node* newNode = new Node(node->value);
-						                newNode->left = myclone(node->left);
-								                newNode->right = myclone(node->right);
-										                return newNode;
-												        }
+	                return nullptr;
+	        }
+	        else {
+	                Node* newNode = new Node(node->value);
+	                newNode->left = myclone(node->left);
+	                newNode->right = myclone(node->right);
+	                return newNode;
+	        }
 }
 
 Set::Set(const Set& other) {
