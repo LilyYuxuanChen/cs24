@@ -183,6 +183,8 @@ size_t Node::rm(const std::string& val, Node*& curr) {
 			curr = curr->right;
 			curr->right = temp;
 			temp = nullptr;
+			delete curr;
+			curr = nullptr;
 			return 1;
 		}
 		else {
@@ -191,6 +193,8 @@ size_t Node::rm(const std::string& val, Node*& curr) {
 			curr = curr->left;
 			curr->left = temp;
 			temp = nullptr;
+			delete curr;
+			curr = nullptr;
 			return 1;
 		}
 /*		else {
