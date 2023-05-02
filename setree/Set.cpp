@@ -17,7 +17,7 @@ Set::Set(const Set& other) {
 	mRoot->left = Set(other.mRoot->left);
 	mRoot->right = Set(other.mRoot->right);
 	*/
-	//mRoot = clone(other.mRoot);
+//	mRoot = clone(other.mRoot);
 	
 
 }
@@ -46,7 +46,7 @@ Set::~Set(){
 
 size_t Set::clear(){
 	size_t n = count();
-	delete mRoot;
+	mRoot->ClearN(mRoot);
 	return n;
 }
 bool Set::contains(const std::string& value) const {

@@ -18,6 +18,21 @@ Node::~Node() {
 	     delete left;
 	     delete right;
      }
+void Node::ClearN(Node* curr) {
+	if (curr == nullptr) {
+		return;
+	}
+	else if (curr->left == nullptr && curr->right == nullptr) {
+		delete curr;
+		return;
+	}
+	else {
+		ClearN(curr->left);
+		ClearN(curr->right);
+		delete curr;
+		return;
+	}	
+}
 
 size_t Node::InsertNode(const std::string& val, Node*& curr) {
 	if (curr == nullptr) {

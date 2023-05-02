@@ -18,6 +18,7 @@ public:
 		size_t countN(Node* curr);
 		bool contains(const std::string& val, Node* curr) const;
 		~Node();
+		void ClearN(Node* curr);
 		//Node (const Node& other);
 		//int node() const;
 	
