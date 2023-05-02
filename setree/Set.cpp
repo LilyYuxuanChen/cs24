@@ -11,6 +11,11 @@ Set::Set(const Set& other) {
 
 }
 Set::Set(Set&& other) {
+	mRoot = other.mRoot;
+	//mRoot->right = other->right;
+	//mRoot->value = other->value;
+	//other->left = nullptr;
+	other.mRoot = nullptr;
 
 }
 Set::~Set(){
