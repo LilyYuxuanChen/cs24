@@ -125,7 +125,17 @@ size_t Node::countN(Node* curr) {
 		return 1 + countN(curr->left) + countN(curr->right);
 	}	
 }
-//size_t Node::lookupN(size_t n, Node* curr) {
+
+
+/*const std::string& Node::lookupN(size_t n, Node* curr) {
+	if ()
+	else if (count == n) {
+		return curr->value
+	}
+}
+*/
+
+
 /*
 size_t Node::rm(const std::string& val, Node* curr) {
 	if (curr == nullptr) {
@@ -189,18 +199,16 @@ bool Node::contains(const std::string& val, Node* curr) const {
 	else if (curr->left == nullptr && curr->right == nullptr) {
 		return false;
 	}
-	else {
-		if(contains(val, curr->left)){
-			//contains(val, curr->right)) {
-			return true;
-		}
-		else if (contains(val, curr->right)){
-			return true;
-		}
-		else {
-			return false;
-		}
+	else if(contains(val, curr->left)){
+		return true;
 	}
+	else if (contains(val, curr->right)){
+		return true;
+	}
+	else {
+		return false;
+	}
+	
 }
 
 
