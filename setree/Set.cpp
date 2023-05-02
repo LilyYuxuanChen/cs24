@@ -14,8 +14,8 @@ Set::Set(const Set& other) {
 	//*mRoot = other.mRoot;
 
 	Node* mRoot = new Node(other.mRoot->value);
-	mRoot->left = other.mRoot->left;
-	mRoot->right = other.mRoot->right;
+	//mRoot->left = other.mRoot->left;
+	//mRoot->right = other.mRoot->right;
 	
 	
 
