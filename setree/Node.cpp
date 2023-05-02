@@ -17,7 +17,7 @@ Node& operator = (const Node& other) {
 Node::~Node() {
 	     delete left;
 	     delete right;
-     }
+}
 void Node::ClearN(Node* curr) {
 	if (curr == nullptr) {
 		return;
@@ -151,7 +151,7 @@ size_t Node::countN(Node* curr) {
 */
 
 
-/*
+
 size_t Node::rm(const std::string& val, Node* curr) {
 	if (curr == nullptr) {
 		//reached end of tree without finding val
@@ -164,13 +164,13 @@ size_t Node::rm(const std::string& val, Node* curr) {
 			return 1;
 		}
 		else if (curr->left == nullptr) {
-			//only one child
-			//use copy constructor
+			//only one child, on the right
+			//use move constructor?
 			return 1;
 		}
 		else if (curr->right == nullptr) {
 			//only one child
-			//use copy constructor
+			//use move constructor?
 			return 1;
 		}
 		else {
@@ -185,18 +185,19 @@ size_t Node::rm(const std::string& val, Node* curr) {
 		}
 	}
 	else {
-		//go thru tree
-		if (val < curr->value) {
-			//go to left/right
+		size_t left = rm(val, curr->left);
+		size_t right = rm(val, curr->right);
+		if (left > right) {
+			return left;
 		}
-		else {
-
+		else{
+		return right;
 		}
 
 		
 	}
 }
-*/
+
 
 
 
