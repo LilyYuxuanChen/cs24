@@ -36,7 +36,8 @@ void Node::ClearN(Node* curr) {
 	else {
 		ClearN(curr->left);
 		ClearN(curr->right);
-		delete curr;
+//		delete curr;
+		curr = nullptr;
 		return;
 	}	
 }
