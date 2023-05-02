@@ -51,9 +51,9 @@ size_t Set::clear(){
 		return 0;
 	}
 	else {
-//	size_t n = count();
-	mRoot->ClearN(mRoot);
-	return 22;
+	size_t n = count();
+//	mRoot->ClearN(mRoot);
+	return n;
 	}
 }
 
