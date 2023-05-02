@@ -10,6 +10,13 @@ Set::Set() {
 Set::Set(const Set& other) {
 	//mRoot = other.mRoot;
 	//mRoot->right = other->right;
+	//mRoot = new Node();
+	//*mRoot = other.mRoot;
+
+	Node* mRoot = new Node(other.mRoot->value);
+	mRoot->left = other.mRoot->left;
+	mRoot->right = other.mRoot->right;
+	
 	
 
 }
