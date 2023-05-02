@@ -192,8 +192,8 @@ size_t Node::rm(const std::string& val, Node*& curr) {
 			curr = curr->right;
 			curr->right = temp;
 			temp = nullptr;
-			delete curr;
-			curr = nullptr;
+			delete curr->right;
+			curr->right = nullptr;
 			return 1;
 		}
 		else if (curr->right == nullptr) {
@@ -202,8 +202,8 @@ size_t Node::rm(const std::string& val, Node*& curr) {
 			curr = curr->left;
 			curr->left = temp;
 			temp = nullptr;
-			delete curr;
-			curr = nullptr;
+			delete curr->left;
+			curr->left = nullptr;
 			return 1;
 		}
 		else {
@@ -211,10 +211,10 @@ size_t Node::rm(const std::string& val, Node*& curr) {
 			Node* temp = curr;
 			Node* largest = getLargestVal(curr->left);
 			curr = largest;
-			largest = curr;
+			largest = temp;
 			temp = nullptr;
-			delete curr;
-			curr = nullptr;
+			delete largest;
+			largest = nullptr;
 			return 1;
 
 		}
