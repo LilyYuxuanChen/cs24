@@ -193,6 +193,9 @@ bool Node::contains(const std::string& val, Node* curr) const {
 		if(contains(val, curr->left) || contains(val, curr->right)) {
 			return true;
 		}
+		else {
+			return false;
+		}
 	}
 }
 
