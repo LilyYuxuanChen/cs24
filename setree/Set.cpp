@@ -12,14 +12,26 @@ Set::Set(const Set& other) {
 	//mRoot->right = other->right;
 	//mRoot = new Node();
 	//*mRoot = other.mRoot;
-
+	/*
 	Node* mRoot = new Node(other.mRoot->value);
-	//mRoot->left = other.mRoot->left;
-	//mRoot->right = other.mRoot->right;
-	
+	mRoot->left = Set(other.mRoot->left);
+	mRoot->right = Set(other.mRoot->right);
+	*/
+	//mRoot = clone(other.mRoot);
 	
 
 }
+/*
+Node* clone(Node* node) {
+	if (node == nullptr) {
+		return nullptr;
+	}
+	Node* newNode = new Node(node->value);
+	newNode->left = clone(node->left);
+	newNode->right = clone(node->right);
+	return newNode;
+}
+*/
 Set::Set(Set&& other) {
 	mRoot = other.mRoot;
 	//mRoot->right = other->right;
@@ -36,7 +48,7 @@ size_t Set::clear(){
 	return 0;
 }
 bool Set::contains(const std::string& value) const {
-	return false;
+	return mRoot->contains(value, mRoot);
 }
 size_t Set::count() const {
 	if (mRoot == nullptr) {
