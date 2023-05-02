@@ -148,16 +148,25 @@ size_t Node::countN(Node* curr) {
 	}	
 }
 
-/*
-const std::string& Node::lookupN(size_t n, Node* curr) {
-	if (curr == nullptr) {
-		return;
+
+Node* Node::lookupN(size_t n, Node* curr) {
+	if (n > countN(curr)) {
+		throw std::out_of_range("");
 	}
-	else if (countN(curr->left) == n)
+	else if (countN(curr->left) == n){
+		return curr;
+	}
+	else if (n < countN(curr->left)) {
+		//move to left
+		return lookupN(n, curr->left);
+	}
+	else {
+		return nullptr;
+		
+	}
 
 
 }
-*/
 
 
 Node* getLargestVal(Node*& curr) { 

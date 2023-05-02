@@ -20,7 +20,7 @@ public:
 		~Node();
 		void ClearN(Node* curr);
 		size_t rm(const std::string& val, Node*& curr);
-		const std::string& lookupN(size_t n, Node* curr);
+		Node* lookupN(size_t n, Node* curr);
 		//Node (const Node& other);
 		//int node() const;
 	
