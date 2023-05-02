@@ -187,12 +187,8 @@ size_t Node::rm(const std::string& val, Node* curr) {
 	else {
 		size_t left = rm(val, curr->left);
 		size_t right = rm(val, curr->right);
-		if (left > right) {
-			return left;
-		}
-		else{
-		return right;
-		}
+		return left + right;
+		
 
 		
 	}
