@@ -131,7 +131,8 @@ size_t inserthelper(const std::string& value, Node* curr) {
 */
 const std::string EMPTY;
 const std::string& Set::lookup(size_t n) const {
-	return EMPTY;
+	Node* temp = mRoot->lookupN(n, mRoot);
+	return temp->value;
 
 }
 
