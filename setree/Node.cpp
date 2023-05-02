@@ -227,8 +227,8 @@ size_t Node::rm(const std::string& val, Node*& curr) {
 			curr = largest;
 			largest = temp;
 			temp = nullptr;
-			delete largest;
-			largest = nullptr;
+			//delete largest;
+			//largest = nullptr;
 			return 1;
 
 
