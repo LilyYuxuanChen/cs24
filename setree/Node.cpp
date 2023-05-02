@@ -15,9 +15,9 @@ Node& operator = (const Node& other) {
 }
 */
 Node::~Node() {
-	ClearN(this);
-	     //delete left;
-	     //delete right;
+	//ClearN(this);
+	     delete left;
+	     delete right;
 }
 void Node::ClearN(Node* curr) {
 	if (curr == nullptr) {
