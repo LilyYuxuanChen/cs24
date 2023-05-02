@@ -48,7 +48,12 @@ size_t Set::clear(){
 	return 0;
 }
 bool Set::contains(const std::string& value) const {
-	return mRoot->contains(value, mRoot);
+	if (mRoot == nullptr) {
+		return false;
+	}
+	else {
+		return mRoot->contains(value, mRoot);
+	}
 }
 size_t Set::count() const {
 	if (mRoot == nullptr) {
