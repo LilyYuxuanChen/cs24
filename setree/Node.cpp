@@ -164,7 +164,13 @@ size_t Node::rm(const std::string& val, Node* curr) {
 		//reached end of tree without finding val
 		return 0;
 	}
-	if (curr->value == val) {
+	else if (val < curr->value) {
+		return rm(val, curr->left);
+	}
+	else if (val > curr->value) {
+		return rm(val, curr->right);
+	}
+	else {
 		//found node
 		if (curr->left == nullptr && curr->right == nullptr) {
 			delete curr;
@@ -198,6 +204,7 @@ size_t Node::rm(const std::string& val, Node* curr) {
 			}
 		}*/
 	}
+/*
 	else {
 //		size_t left = rm(val, curr->left);
 //		size_t right = rm(val, curr->right);
@@ -211,8 +218,9 @@ size_t Node::rm(const std::string& val, Node* curr) {
 		}
 		
 	}
-}
+*/
 
+}
 
 
 
