@@ -43,7 +43,7 @@ Set::Set(Set&& other) {
 
 }
 Set::~Set(){
-	delete mRoot;
+	mRoot->ClearN(mRoot);
 }
 
 size_t Set::clear(){
