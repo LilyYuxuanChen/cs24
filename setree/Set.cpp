@@ -56,6 +56,7 @@ size_t Set::clear(){
 	return n;
 	}
 }
+
 bool Set::contains(const std::string& value) const {
 	if (mRoot == nullptr) {
 		return false;
@@ -118,6 +119,6 @@ void Set::print() const{
 	}
 }
 size_t Set::remove(const std::string& value) {
-	return 0;
+	return mRoot->rm(value, mRoot);
 }
 
