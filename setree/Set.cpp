@@ -6,6 +6,17 @@ using namespace std;
 Set::Set() {
 	mRoot = nullptr;
 }
+Node* myclone(const Node* node) {
+	        if (node == nullptr) {
+			                return nullptr;
+					        }
+		        else {
+				                Node* newNode = new Node(node->value);
+						                newNode->left = myclone(node->left);
+								                newNode->right = myclone(node->right);
+										                return newNode;
+												        }
+}
 
 Set::Set(const Set& other) {
 	//mRoot = other.mRoot;
@@ -17,20 +28,20 @@ Set::Set(const Set& other) {
 	mRoot->left = Set(other.mRoot->left);
 	mRoot->right = Set(other.mRoot->right);
 	*/
-//	mRoot = clone(other.mRoot);
+	mRoot = myclone(other.mRoot);
 //	
 //	mRoot = clone(other);	
 
 }
 /*
-Node*& clone(Node*& node) {
+Node* myclone(const Node* node) {
 	if (node == nullptr) {
-		return node;
+		return nullptr;
 	}
 	else {
-		Node*& newNode = new Node(node->value);
-		newNode->left = clone(node->left);
-		newNode->right = clone(node->right);
+		Node* newNode = new Node(node->value);
+		newNode->left = myclone(node->left);
+		newNode->right = myclone(node->right);
 		return newNode;
 	}
 }
