@@ -218,7 +218,7 @@ size_t Node::rm(const std::string& val, Node*& curr) {
 			return 1;
 		}
 		else {
-/*			//two children
+			//two children
 			Node* temp = curr;
 			Node* largest = getLargestVal(curr->left);
 			curr = largest;
@@ -227,11 +227,13 @@ size_t Node::rm(const std::string& val, Node*& curr) {
 			//delete largest;
 			largest = nullptr;
 			return 1;
-*/
+
+
+/*
 			Node* largest = getLargestVal(curr->left);
 			curr->value = largest->value;
 			return rm(largest->value, curr);
-
+*/
 		}
 /*		else {
 			if (curr->left->value < val && curr->left->value > curr->right->value){ 
