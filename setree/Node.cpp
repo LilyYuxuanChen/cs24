@@ -190,14 +190,14 @@ size_t Node::rm(const std::string& val, Node* curr) {
 //
 
 bool Node::contains(const std::string& val, Node* curr) const {
-	if (curr->value == val) {
-		return true;
-	}
-	else if (curr == nullptr) {
+	if (curr == nullptr) {
 		return false;
 	}
 	else if (curr->left == nullptr && curr->right == nullptr) {
 		return false;
+	}
+	else if (curr->value == val) {
+		return true;
 	}
 	else if(contains(val, curr->left)){
 		return true;
