@@ -150,6 +150,9 @@ size_t Node::countN(Node* curr) {
 
 size_t cntR = 0;
 Node* Node::lookupN(size_t n, Node* curr) {
+	if (curr == nullptr) {
+		throw std::out_of_range("");
+	}
 	if (n > countN(curr)) {
 		throw std::out_of_range("");
 	}
