@@ -166,7 +166,7 @@ Node* Node::lookupN(size_t n, Node* curr) {
 	else {
 		//move to right
 		
-		return curr;
+		return lookupN(n-countN(curr)-1, curr->right);
 		
 	}
 
@@ -227,8 +227,8 @@ size_t Node::rm(const std::string& val, Node*& curr) {
 			curr = largest;
 			largest = temp;
 			temp = nullptr;
-			//delete largest;
-			//largest = nullptr;
+			delete largest;
+			largest = nullptr;
 			return 1;
 
 
