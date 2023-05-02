@@ -45,7 +45,9 @@ Set::~Set(){
 }
 
 size_t Set::clear(){
-	return 0;
+	size_t n = count();
+	delete mRoot;
+	return n;
 }
 bool Set::contains(const std::string& value) const {
 	if (mRoot == nullptr) {
