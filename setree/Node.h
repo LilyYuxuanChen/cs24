@@ -15,7 +15,7 @@ public:
 		Node(const std::string& val);
 		static size_t InsertNode(const std::string& val, Node*& curr);
 		void PrintNode(Node* curr);
-		size_t countN(Node* curr);
+		size_t countN(Node*& curr);
 		bool contains(const std::string& val, Node* curr) const;
 		~Node();
 		void ClearN(Node* curr);
