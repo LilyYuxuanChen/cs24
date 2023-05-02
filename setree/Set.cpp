@@ -52,7 +52,7 @@ size_t Set::clear(){
 	}
 	else {
 	size_t n = count();
-//	mRoot->ClearN(mRoot);
+	delete mRoot;	
 	return n;
 	}
 }
