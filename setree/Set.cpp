@@ -8,6 +8,8 @@ Set::Set() {
 }
 
 Set::Set(const Set& other) {
+	mRoot = other.mRoot;
+	//mRoot->right = other->right;
 
 }
 Set::Set(Set&& other) {
