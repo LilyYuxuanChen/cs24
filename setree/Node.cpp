@@ -167,21 +167,27 @@ size_t Node::rm(const std::string& val, Node* curr) {
 	if (curr->value == val) {
 		//found node
 		if (curr->left == nullptr && curr->right == nullptr) {
-//			delete curr;
-//			curr = nullptr;
+			delete curr;
+			curr = nullptr;
 			return 1;
 		}
 		else if (curr->left == nullptr) {
 			//only one child, on the right
-			//use move constructor?
-			return 1;
-		}
-		else if (curr->right == nullptr) {
-			//only one child
-			//use move constructor?
+			Node* temp = curr;
+			curr = curr->right;
+			curr->right = temp;
+			temp = nullptr;
 			return 1;
 		}
 		else {
+			//only one child on the left
+			Node* temp = curr; 
+			curr = curr->left;
+			curr->left = temp;
+			temp = nullptr;
+			return 1;
+		}
+/*		else {
 			if (curr->left->value < val && curr->left->value > curr->right->value){ 
 				//left child should replace curr
 				return 1;
@@ -190,14 +196,19 @@ size_t Node::rm(const std::string& val, Node* curr) {
 				//right child should replace curr
 				return 1;
 			}
-		}
+		}*/
 	}
 	else {
-		size_t left = rm(val, curr->left);
-		size_t right = rm(val, curr->right);
-		return left + right;
+//		size_t left = rm(val, curr->left);
+//		size_t right = rm(val, curr->right);
+//		return left + right;
 		
-
+		if (val < curr->value) {
+			return rm(val, curr->left);
+		}
+		else {
+			return rm(val,curr->right);
+		}
 		
 	}
 }
