@@ -161,7 +161,7 @@ Node* Node::lookupN(size_t n, Node* curr) {
 		return lookupN(n, curr->left);
 	}
 	else {
-		return nullptr;
+		return curr;
 		
 	}
 
