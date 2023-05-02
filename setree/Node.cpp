@@ -166,7 +166,7 @@ Node* Node::lookupN(size_t n, Node* curr) {
 	else {
 		//move to right
 		
-		return lookupN(n-countN(curr)-1, curr->right);
+		return lookupN(n-countN(curr->left)-1, curr->right);
 		
 	}
 
