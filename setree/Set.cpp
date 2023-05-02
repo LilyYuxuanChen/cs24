@@ -52,7 +52,8 @@ size_t Set::clear(){
 	}
 	else {
 	size_t n = count();
-	delete mRoot;	
+	mRoot->ClearN(mRoot);	
+	mRoot = nullptr;
 	return n;
 	}
 }
