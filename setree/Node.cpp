@@ -159,7 +159,7 @@ size_t Node::countN(Node* curr) {
 
 
 
-size_t Node::rm(const std::string& val, Node* curr) {
+size_t Node::rm(const std::string& val, Node*& curr) {
 	if (curr == nullptr) {
 		//reached end of tree without finding val
 		return 0;

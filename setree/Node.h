@@ -19,7 +19,7 @@ public:
 		bool contains(const std::string& val, Node* curr) const;
 		~Node();
 		void ClearN(Node* curr);
-		size_t rm(const std::string& val, Node* curr);
+		size_t rm(const std::string& val, Node*& curr);
 		//Node (const Node& other);
 		//int node() const;
 	
