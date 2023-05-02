@@ -148,7 +148,7 @@ size_t Node::countN(Node* curr) {
 	}	
 }
 
-
+size_t cntR = 0;
 Node* Node::lookupN(size_t n, Node* curr) {
 	if (n > countN(curr)) {
 		throw std::out_of_range("");
@@ -161,6 +161,8 @@ Node* Node::lookupN(size_t n, Node* curr) {
 		return lookupN(n, curr->left);
 	}
 	else {
+		//move to right
+		
 		return curr;
 		
 	}
@@ -216,15 +218,19 @@ size_t Node::rm(const std::string& val, Node*& curr) {
 			return 1;
 		}
 		else {
-			//two children
+/*			//two children
 			Node* temp = curr;
 			Node* largest = getLargestVal(curr->left);
 			curr = largest;
 			largest = temp;
 			temp = nullptr;
-			delete largest;
+			//delete largest;
 			largest = nullptr;
 			return 1;
+*/
+			Node* largest = getLargestVal(curr->left);
+			curr->value = largest->value;
+			return rm(largest->value, curr);
 
 		}
 /*		else {
