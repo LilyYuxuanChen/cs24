@@ -22,7 +22,7 @@ Set::Set(const Set& other) {
 
 }
 /*
-Node* clone(Node* node) {
+Node* clone(const Node* node) {
 	if (node == nullptr) {
 		return node;
 	}
@@ -47,9 +47,14 @@ Set::~Set(){
 }
 
 size_t Set::clear(){
+	if (mRoot == nullptr) {
+		return 0;
+	}
+	else {
 	size_t n = count();
 	mRoot->ClearN(mRoot);
 	return n;
+	}
 }
 bool Set::contains(const std::string& value) const {
 	if (mRoot == nullptr) {
