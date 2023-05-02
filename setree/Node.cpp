@@ -193,9 +193,9 @@ bool Node::contains(const std::string& val, Node* curr) const {
 	if (curr == nullptr) {
 		return false;
 	}
-	else if (curr->left == nullptr && curr->right == nullptr) {
-		return false;
-	}
+//	else if (curr->left == nullptr && curr->right == nullptr) {
+//		return false;
+//	}
 	else if (curr->value == val) {
 		return true;
 	}
