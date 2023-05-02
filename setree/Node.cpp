@@ -14,11 +14,15 @@ Node& operator = (const Node& other) {
 	//delete 
 }
 */
+
+/*
 Node::~Node() {
 	//ClearN(this);
 	     delete left;
 	     delete right;
 }
+*/
+
 void Node::ClearN(Node* curr) {
 	if (curr == nullptr) {
 		return;
