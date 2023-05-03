@@ -234,8 +234,8 @@ size_t Node::rm(const std::string& val, Node*& curr) {
 			
 			Node* largest = getLargestVal(curr->left);
 			curr->value = largest->value;
-			curr->left = curr->left;
-			curr->right = curr->right;
+			curr->left = largest->left;
+			curr->right = largest->right;
 			delete largest;
 			largest = nullptr;
 			return 1;
