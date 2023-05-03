@@ -8,11 +8,13 @@ int main() {
   Set set;
   
   //std::cout << "This program doesn't do anything interesting yet...\n";
-set.insert("x");
-set.insert("y");
-set.insert("z");
+set.insert("nu");
+set.insert("mu");
+set.insert("gamma");
+set.insert("eta");
+
 set.print();
-set.remove("y");
+set.remove("mu");
 set.print();
 
   return 0;
