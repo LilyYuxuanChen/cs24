@@ -235,10 +235,10 @@ size_t Node::rm(const std::string& val, Node*& curr) {
 			largest = nullptr;
 			return 1;
 */
-			
+				
 			Node* largest = getLargestVal(curr->left);
 			curr->value = largest->value;
-			rm(largest->value, curr);
+			Node* temp = rm(largest->value, curr->left);
 	//		curr->left = largest->left;
 	//		curr->right = largest->right;
 //			largest = largest->left;
