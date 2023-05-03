@@ -6,8 +6,14 @@
 
 int main() {
   Set set;
-  cout << set.insert("a");
-  std::cout << "This program doesn't do anything interesting yet...\n";
+  
+  //std::cout << "This program doesn't do anything interesting yet...\n";
+set.insert("x");
+set.insert("y");
+set.insert("z");
+set.print();
+set.remove("y");
+set.print();
 
   return 0;
 }
