@@ -14,7 +14,7 @@ set.insert("gamma");
 set.insert("eta");
 
 set.print();
-set.remove("mu");
+set.remove("i");
 set.print();
 
   return 0;
