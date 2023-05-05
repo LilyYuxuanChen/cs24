@@ -142,7 +142,7 @@ std::set<Person*> Person::sons() {
 	set<Person*> son;
 	set<Person*> childs = this->children();
 	for (const auto& child : childs) {
-		if (child->gender() == Gender::FEMALE) {
+		if (child->gender() == Gender::MALE) {
 			son.insert(child);
 		}
 	}
