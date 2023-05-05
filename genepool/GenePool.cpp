@@ -39,3 +39,25 @@ GenePool::GenePool(std::istream& stream) {
 	}
 }
 
+GenePool::~GenePool() {
+	for (const auto& gene : genep) {
+		delete gene->second;
+	}
+	genep.clear();
+}
+
+set<Person*> Genepool::everyone() const {
+	set<Person*> population;
+	for (auto& [n, p] : genep) {
+		population.insert(p);
+	}
+	return population;
+}
+Person* GenePool::find(const string& name) const {
+	if (genep.find(name) != genep.end()) {
+		return genep.find(name)->second;
+	}
+	else {
+		return nullptr;
+	}
+}
