@@ -7,6 +7,8 @@
 #include <set>
 #include <string>
 #include <map>
+#include <ostream>
+using namespace std;
 
 // This is the database class you need to implement.
 // It stores a collection of people and supports lookup by name.
@@ -14,6 +16,7 @@
 
 class GenePool {
   // Member Variables
+	map<string, Pearson*> genep;
 
   // Helper Functions
 
@@ -31,5 +34,7 @@ public:
   // Return nullptr if there is no such person.
   Person* find(const std::string& name) const;
 };
+
+
 
 #endif
