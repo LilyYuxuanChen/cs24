@@ -2,7 +2,7 @@
 #define PERSON_H
 
 #include "Enums.h"
-
+#include <vector>
 #include <set>
 #include <string>
 using namespace std;
@@ -13,11 +13,12 @@ using namespace std;
 
 class Person {
   // Member Variables
-String pname;
-Char pgender;
-Person* dad;
-Person* mom;
-vector <Person*> pchildren;
+public:
+	string pname;
+	string pgender;
+	Person* dad;
+	Person* mom;
+	vector <Person*> pchild;
 
   // Helper Functions
 

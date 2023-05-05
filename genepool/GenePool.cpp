@@ -2,6 +2,8 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <map>
+#include "Person.h"
 
 using namespace std;
 // GenePool Member Functions
@@ -15,38 +17,38 @@ GenePool::GenePool(std::istream& stream) {
 		if (ln.empty()) {
 			continue;
 		}
-		else if (ln[0] == "#") {
+		else if (ln[0] == '#') {
 			continue;
 		}
 		std::istringstream iss (ln);
 		string temp;
 		vector <string> input;
 		while(getline(iss, temp, '\t')) {
-			input.pushback(temp);
+			input.push_back(temp);
 		}
 		
 		Person* person = new Person(input[0],input[1]);
 		genep.insert({input[0], person});
 		if (input[2] != "???"){
 			person->mom = genep.find(input[2])->second;
-			person->mom->pchild.pushback(person);
+			person->mom->pchild.push_back(person);
 		}
 		if (input[3] != "???") {
 			person->dad = genep.find(input[3])->second;
-			person->dad->pchild.pushback(person);
+			person->dad->pchild.push_back(person);
 		}
 
 	}
 }
 
 GenePool::~GenePool() {
-	for (const auto& gene : genep) {
-		delete gene->second;
+	for (auto& [n, p] : genep) {
+		delete p;
 	}
 	genep.clear();
 }
 
-set<Person*> Genepool::everyone() const {
+set<Person*> GenePool::everyone() const {
 	set<Person*> population;
 	for (auto& [n, p] : genep) {
 		population.insert(p);

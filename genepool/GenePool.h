@@ -16,7 +16,7 @@ using namespace std;
 
 class GenePool {
   // Member Variables
-	map<string, Pearson*> genep;
+	map<string, Person*> genep;
 
   // Helper Functions
 
