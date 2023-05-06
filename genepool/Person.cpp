@@ -31,7 +31,40 @@ Person* Person::father() {
 set<Person*> stub;
 
 std::set<Person*> Person::ancestors(PMod pmod) {
-	return stub;	
+	set<Person*> ans;
+	set<Person*> EMPTY;
+	if (this->dad ==nullptr && this->mom ==nullptr){
+	       return EMPTY;
+	}
+	if (this->dad !=nullptr && pmod == PMod::PATERNAL) {
+		ans.insert(this->dad);
+		set<Person*> dans = this->dad->ancestors();
+		for (const auto& a : dans) {
+			ans.insert(a);
+		}
+		return ans;
+	}
+	else if (this->mom != nullptr && pmod ==PMod::MATERNAL) {
+		ans.insert(this->mom);
+		set<Person*> mans = this->mom->ancestors();
+		for (const auto& a : mans) {
+			ans.insert(a);
+		}
+		return ans;
+	}
+	else {
+		ans.insert(this->dad);
+		set<Person*> dans = this->dad->ancestors();
+		for (const auto& a :dans) {
+			ans.insert(a);
+		}
+		set<Person*> mans = this->mom->ancestors();
+		for (const auto& a :mans) {
+			ans.insert(a);
+		}
+		return ans;
+	}
+	
 }
 std::set<Person*> Person::aunts(PMod pmod, SMod smod) {
 	return stub;
