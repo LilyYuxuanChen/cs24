@@ -98,7 +98,17 @@ std::set<Person*> Person::daughters() {
 	return daugh;
 }
 std::set<Person*> Person::descendants() {
-	return stub;
+	set<Person*> des;
+	set<Person*> d1 = this->children();
+	for (const auto& d : d1) {
+		des.insert(d);
+		set<Person*> d2 = d->descendants();
+		for (const auto& e : d2) {
+			des.insert(e);
+		}
+	}
+
+	return des;
 }
 std::set<Person*> Person::grandchildren() {
 	set<Person*> gchilds;
