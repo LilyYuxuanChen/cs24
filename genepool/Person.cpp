@@ -253,7 +253,80 @@ std::set<Person*> Person::parents(PMod pmod) {
 	return ps;
 }
 std::set<Person*>  Person::siblings(PMod pmod, SMod smod) {
-	return stub;
+	//set<Person*> sib;
+	set<Person*> dsib;
+	set<Person*> msib;
+	set<Person*> asib;
+	set<Person*> fsib;
+	set<Person*> hdsib;
+	set<Person*> hmsib;
+	set<Person*> hsib;
+
+	if (this->dad != NULL) {
+		dsib = this->dad->children();
+	}
+	if (this->mom != NULL) {
+		msib = this->mom->children();
+	}
+
+	for (const auto& d : dsib) {
+		asib.insert(d);
+	}
+	for (const auto& m : msib) {
+		asib.insert(m);
+	}
+
+	for (const auto& d : dsib) {
+		if (msib.find(d) != msib.end()) {
+			fsib.insert(d);
+		}
+		else {
+			hdsib.insert(d);
+			hsib.insert(d);
+		}
+	}
+	for (const auto& m : msib) {
+		if (fsib.find(m) == fsib.end()) {
+			hmsib.insert(m);
+			hsib.insert(m);
+		}
+	}
+	
+	//sib.erase(this);
+	dsib.erase(this);
+	msib.erase(this);
+	asib.erase(this);
+	fsib.erase(this);
+	hdsib.erase(this);
+	hmsib.erase(this);
+	hsib.erase(this);
+
+	if (smod == SMod::FULL) {
+		return fsib;
+	}
+	else if (smod == SMod::ANY) {
+		if (pmod == PMod::MATERNAL) {
+			return msib;
+		}
+		else if (pmod == PMod::PATERNAL) {
+			return dsib;
+		}
+		else {
+			return asib;
+		}
+	}
+	else {
+		if (pmod == PMod::MATERNAL) {
+			return hmsib;
+		}
+		else if (pmod == PMod::PATERNAL) {
+			return hdsib;
+		}
+		else {
+			return hsib;
+		}
+	}
+
 }
 std::set<Person*> Person::sisters(PMod pmod, SMod smod) {
 	return stub;
