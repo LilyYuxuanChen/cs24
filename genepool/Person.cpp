@@ -53,14 +53,19 @@ std::set<Person*> Person::ancestors(PMod pmod) {
 		return ans;
 	}
 	else {
+		if (this->dad != nullptr) {
 		ans.insert(this->dad);
 		set<Person*> dans = this->dad->ancestors();
 		for (const auto& a :dans) {
 			ans.insert(a);
 		}
+		}
+		if (this->mom != nullptr) {
+		ans.insert(this->mom);
 		set<Person*> mans = this->mom->ancestors();
 		for (const auto& a :mans) {
 			ans.insert(a);
+		}
 		}
 		return ans;
 	}
