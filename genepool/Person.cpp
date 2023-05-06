@@ -75,16 +75,24 @@ std::set<Person*> Person::aunts(PMod pmod, SMod smod) {
 	set<Person*> a;
 	set<Person*> temp;
 	if (pmod == PMod::MATERNAL) {
-		a = this->mom->sisters(PMod::ANY, smod);
+		if (this->mom != nullptr) {
+			a = this->mom->sisters(PMod::ANY, smod);
+		}
 	}
 	else if (pmod == PMod::PATERNAL) {
-		a = this->dad->sisters(PMod::ANY, smod);
+		if (this->dad != nullptr) {
+			a = this->dad->sisters(PMod::ANY, smod);
+		}
 	}
 	else {
-		a = this->dad->sisters(PMod::ANY, smod);
+		if (this->dad != nullptr) {
+			a = this->dad->sisters(PMod::ANY, smod);
+		}
+		if (this->mom != nullptr) {
 		temp = this->mom->sisters(PMod::ANY, smod);
 		for (const auto& t : temp) {
 			a.insert(t);
+		}
 		}
 		
 	}
