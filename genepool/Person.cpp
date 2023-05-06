@@ -270,7 +270,15 @@ std::set<Person*> Person::nephews(PMod pmod, SMod smod) {
 	return neph;
 }
 std::set<Person*>  Person::nieces(PMod pmod, SMod smod) {
-	return stub;
+	set<Person*> nie;
+	set<Person*> sib = this->siblings(pmod, smod);
+	for (const auto& s : sib) {
+		set<Person*> sibs = s->daughters();
+		for (const auto& d : sibs) {
+			nie.insert(d);
+		}
+	}
+	return nie;
 }
 std::set<Person*> Person::parents(PMod pmod) {
 	set<Person*> ps;
