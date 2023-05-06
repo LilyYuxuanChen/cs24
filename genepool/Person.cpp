@@ -110,7 +110,7 @@ std::set<Person*> Person::grandfathers(PMod pmod) {
 }
 std::set<Person*> Person::grandmothers(PMod pmod) {
 	set<Person*> gmom;
-	if (pmod == Pmod::PATERNAL) {
+	if (pmod == PMod::PATERNAL) {
 		if(this->mom != NULL && this->mom->dad != NULL) {
 			gmom.insert(this->mom->dad);
 		}
