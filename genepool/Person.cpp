@@ -329,7 +329,14 @@ std::set<Person*>  Person::siblings(PMod pmod, SMod smod) {
 
 }
 std::set<Person*> Person::sisters(PMod pmod, SMod smod) {
-	return stub;
+	set<Person*> sis;
+	set<Person*> sib = this->siblings(pmod, smod);
+	for (const auto& s : sib) {
+		if (s->pgender == "female") {
+			sis.insert(s);
+		}
+	}
+	return sis;
 }
 std::set<Person*> Person::sons() {
 	set<Person*> son;
