@@ -72,7 +72,24 @@ std::set<Person*> Person::ancestors(PMod pmod) {
 	
 }
 std::set<Person*> Person::aunts(PMod pmod, SMod smod) {
-	return stub;
+	set<Person*> a;
+	set<Person*> temp;
+	if (pmod == PMod::MATERNAL) {
+		a = this->mom->sisters(PMod::ANY, smod);
+	}
+	else if (pmod == PMod::PATERNAL) {
+		a = this->dad->sisters(PMod::ANY, smod);
+	}
+	else {
+		a = this->dad->sisters(PMod::ANY, smod);
+		temp = this->mom->sisters(PMod::ANY, smod);
+		for (const auto& t : temp) {
+			a.insert(t);
+		}
+		
+	}
+
+	return a;
 }
 std::set<Person*> Person::brothers(PMod pmod, SMod smod) {
 	set<Person*> bro;
