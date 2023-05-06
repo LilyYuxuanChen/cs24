@@ -119,7 +119,49 @@ std::set<Person*> Person::children() {
 	return childs;
 }
 std::set<Person*> Person::cousins(PMod pmod, SMod smod) {
-	return stub;
+	set<Person*> cous;
+	set<Person*> sib;
+	if (pmod == PMod::MATERNAL) {
+		if (this->mom != nullptr) {
+			sib = this->mom->siblings(PMod::ANY, smod);
+			for (const auto& s : sib) {
+				set<Person*> temp = s->children();
+				for (const auto& t : temp) {
+					cous.insert(t);
+				}
+			}
+		}
+	}
+	else if (pmod == PMod::PATERNAL) {
+		if (this->dad != nullptr) {
+			sib = this->dad->siblings(PMod::ANY, smod);
+			for (const auto& s : sib) {
+				set<Person*> temp = s->children();
+				for (const auto& t : temp) {
+					cous.insert(t);
+				}
+			}
+		}
+	}
+	else {
+		if (this->mom != nullptr) {
+			sib = this->mom->siblings(PMod::ANY, smod);
+		}
+		if (this->dad != nullptr) {
+			set<Person*> t = this->dad->siblings(PMod::ANY, smod);
+			for (const auto& temp : t) {
+				sib.insert(temp);
+			}
+
+		}
+		for (const auto& s : sib) {
+			set<Person*> child  = s->children();
+			for (const auto& c : child) {
+				cous.insert(c);
+			}
+		}
+	}
+	return cous;
 }
 std::set<Person*> Person::daughters() {
 	set<Person*> daugh;
