@@ -75,7 +75,16 @@ std::set<Person*> Person::aunts(PMod pmod, SMod smod) {
 	return stub;
 }
 std::set<Person*> Person::brothers(PMod pmod, SMod smod) {
-	return stub;
+	set<Person*> bro;
+	set<Person*> sib = this->siblings(pmod, smod);
+	for (const auto& s : sib) {
+		if (s->pgender == "male") {
+			bro.insert(s);
+
+		}
+	}
+
+	return bro;
 }
 std::set<Person*> Person::children() {
 	set<Person*> childs;
