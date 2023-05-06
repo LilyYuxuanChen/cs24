@@ -92,7 +92,40 @@ std::set<Person*> Person::grandmothers(PMod pmod) {
 	return stub;
 }
 std::set<Person*> Person::grandparents(PMod pmod) {
-	return stub;
+	set<Person*> gparents;
+
+	if (pmod == PMod::PATERNAL) {
+		if (this->dad != NULL && this->dad->dad != NULL){
+			gparents.insert(this->dad->dad);
+		}
+		if (this->dad != NULL && this->dad->mom != NULL){
+			gparents.insert(this->dad->mom);
+		}
+	}
+	else if (pmod == PMod::MATERNAL) {
+	 	if (this->mom != NULL && this->mom->dad != NULL){
+		        gparents.insert(this->mom->dad);
+		}
+	        if (this->mom != NULL && this->mom->mom != NULL){
+		        gparents.insert(this->mom->mom);
+		}
+	}
+	else {
+		if (this->dad != NULL && this->dad->dad != NULL){
+			 gparents.insert(this->dad->dad);
+		}
+		if (this->dad != NULL && this->dad->mom != NULL){
+		         gparents.insert(this->dad->mom);
+		}
+		if (this->mom != NULL && this->mom->dad != NULL){
+		         gparents.insert(this->mom->dad);
+		}
+		if (this->mom != NULL && this->mom->mom != NULL){
+		         gparents.insert(this->mom->mom);
+		}
+
+	}
+	return gparents;
 }
 std::set<Person*> Person::grandsons() {
 	set<Person*> gsons;
