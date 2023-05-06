@@ -111,8 +111,8 @@ std::set<Person*> Person::grandfathers(PMod pmod) {
 std::set<Person*> Person::grandmothers(PMod pmod) {
 	set<Person*> gmom;
 	if (pmod == PMod::PATERNAL) {
-		if(this->mom != NULL && this->mom->dad != NULL) {
-			gmom.insert(this->mom->dad);
+		if(this->mom != NULL && this->dad->mom != NULL) {
+			gmom.insert(this->dad->mom);
 		}
 	}
 	else if (pmod == PMod::MATERNAL) {
@@ -121,8 +121,8 @@ std::set<Person*> Person::grandmothers(PMod pmod) {
 		}
 	}
 	else {
-		if (this->mom != NULL && this->mom->dad != NULL) {
-			gmom.insert(this->mom->dad);
+		if (this->mom != NULL && this->dad->mom != NULL) {
+			gmom.insert(this->dad->mom);
 		}
 		if (this->mom != NULL && this->mom->mom != NULL) {
 			gmom.insert(this->mom->mom);
