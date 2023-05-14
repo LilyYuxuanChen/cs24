@@ -1,6 +1,8 @@
 #ifndef COUNTER_H
 #define COUNTER_H
-
+#include "DataStore.h"
+#include <random>
+#include <functional>
 #include <cstddef>
 #include <string>
 
