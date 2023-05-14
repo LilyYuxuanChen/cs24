@@ -13,6 +13,7 @@ class Counter {
 public:
   class Iterator {
     // Member Variables
+    Node* i;
 
   public:
     const std::string& key() const;
@@ -24,10 +25,20 @@ public:
   };
 
 private:
-  // Member Variables
+  // Member Variable
+  Node** table;
+  int cap;
+  int cnt;
+  Iterator* ibegin;
+  Iterator* ilast;
+  Iterator* iend;
+ 
 
 private:
   // Helper Functions
+  void resize();
+  int h(const std::string& key, int max);
+  Node* find(const std::string& key);
 
 public:
   Counter();
