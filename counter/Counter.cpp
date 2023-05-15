@@ -229,6 +229,8 @@ void Counter::del(const std::string& key) {
 		Node* prevseq = t->ps;
 		Node* nextseq = t->ns;
 		bool n = false;
+		string temp = t->k;
+		                        int currind = h(temp,cap);
 		if (prevchain != NULL && nextchain != NULL) {
 			 prevchain->nc = t->nc;
 			 nextchain->pc = t->pc;
