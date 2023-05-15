@@ -240,7 +240,7 @@ void Counter::del(const std::string& key) {
 
 		}
 		else if (nextchain == NULL && prevchain != NULL) {
-			prevchain = NULL;
+			prevchain->nc = NULL;
 		}
 		
 
