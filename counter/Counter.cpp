@@ -255,7 +255,9 @@ void Counter::del(const std::string& key) {
 		else if (nextseq == NULL && prevseq != NULL) {
 			ilast->i = t->ps;
 			prevseq->ns = NULL;
+		
 		}
+		delete t;
 	}
 
 /*
