@@ -232,14 +232,14 @@ void Counter::del(const std::string& key) {
 			 prevchain->nc = t->nc;
 			 nextchain->pc = t->pc;
 		}
-		else if (prevchain == NULL){
+		else if (prevchain == NULL && nextchain != NULL){
 			string temp = t->k;
 			int currind = h(temp, cap);
 			table[currind] = t->nc;
 			nextchain->pc = NULL;
 
 		}
-		else if (nextchain == NULL) {
+		else if (nextchain == NULL && prevchain != NULL) {
 			prevchain = NULL;
 		}
 		
@@ -248,11 +248,11 @@ void Counter::del(const std::string& key) {
 			prevseq->ns = t->ns;
 			nextseq->ps = t->ps;
 		}
-		else if (prevseq == NULL) {
+		else if (prevseq == NULL && nextseq !=NULL) {
 			ibegin->i = t->ns;
 			nextseq->ps = NULL;
 		}
-		else if (nextseq == NULL) {
+		else if (nextseq == NULL && prevseq != NULL) {
 			ilast->i = t->ps;
 			prevseq->ns = NULL;
 		}
