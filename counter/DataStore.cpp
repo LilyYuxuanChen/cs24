@@ -2,13 +2,13 @@
 #include <cstring>
 
 using namespace std;
-Node::Node(string key, int val, Node* nchain = nullptr, Node* pchain = nullptr, Node* nseq = nullptr, Node* pseq = nullptr) {
+Node::Node(string key, int val) {
 	k = key;
 	v = val;
-	nc = nchain;
-	pc = pchain;
-	ns = nseq;
-	ps = pseq;	
+	nc = NULL;
+	pc = NULL;
+	ns = NULL;
+	ps = NULL;	
 }	
 Node::~Node(){
 	nc = nullptr;

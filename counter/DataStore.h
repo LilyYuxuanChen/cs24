@@ -30,7 +30,7 @@ public:
 	Node* ns;
 	Node* ps;
 
-	Node(string key, int val, Node* nchain = nullptr, Node* pchain = nullptr, Node* nseq = nullptr, Node* pseq = nullptr);
+	Node(string key, int val);
 	~Node();
-
+};
 #endif

@@ -15,7 +15,8 @@ class Counter {
 public:
   class Iterator {
     // Member Variables
-    Node* i;
+  public:
+	  Node* i;
 
   public:
     const std::string& key() const;
@@ -39,8 +40,8 @@ private:
 private:
   // Helper Functions
   void resize();
-  int h(const std::string& key, int max);
-  Node* find(const std::string& key);
+  int h(const std::string& key, int max) const;
+  Node* find(const std::string& key) const;
 
 public:
   Counter();
