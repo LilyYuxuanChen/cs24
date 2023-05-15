@@ -242,6 +242,11 @@ void Counter::del(const std::string& key) {
 		else if (nextchain == NULL && prevchain != NULL) {
 			prevchain->nc = NULL;
 		}
+		else {
+			string temp = t->k;
+			int currind = h(temp,cap);
+			table[currind] = NULL;
+		}
 		
 
 		if (prevseq != NULL && nextseq != NULL) {
