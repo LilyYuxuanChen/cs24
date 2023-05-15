@@ -221,7 +221,49 @@ void Counter::dec(const std::string& key, int by) {
 
 }
 void Counter::del(const std::string& key) {
-	//
+	Node* t = find(key);
+	if (t != NULL) {
+		t->v = 0;
+		Node* prevchain = t->pc;
+		Node* nextchain = t->nc;
+		Node* prevseq = t->ps;
+		Node* nextseq = t->ns;
+		if (prevchain != NULL && nextchain != NULL) {
+			 prevchain->nc = t->nc;
+			 nextchain->pc = t->pc;
+		}
+		else if (prevchain == NULL){
+			string temp = t->k;
+			int currind = h(temp, cap);
+			table[currind] = t->nc;
+			nextchain->pc = NULL;
+
+		}
+		else if (nextchain == NULL) {
+			prevchain = NULL;
+		}
+		
+
+		if (prevseq != NULL && nextseq != NULL) {
+			prevseq->ns = t->ns;
+			nextseq->ps = t->ps;
+		}
+		else if (prevseq == NULL) {
+			ibegin->i = t->ns;
+			nextseq->ps = NULL;
+		}
+		else if (nextseq == NULL) {
+			ilast->i = t->ps;
+			prevseq->ns = NULL;
+		}
+		delete t;
+	}
+/*
+		prevchain->nc = t->nc;
+		nextchain->pc = t->pc;
+		prevseq->ns = t->ns;
+		nextseq->ps = t->ps;
+*/
 }
 
 
