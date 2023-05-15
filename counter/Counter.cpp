@@ -149,7 +149,6 @@ void Counter::resize() {
 	delete[] table;
 	table = ntable;
 	cap = ncap;
-	cnt = count();//changed
 
 }
 
