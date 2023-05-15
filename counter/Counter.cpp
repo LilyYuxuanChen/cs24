@@ -11,7 +11,7 @@ Counter::Iterator Counter::end() const{
 int Counter::total() const{
 	int sum = 0;
 	for(auto i = this->begin(); i != this->end(); ++i) {
-		sum = sum + i.value();
+		sum = sum + i->v;
 	}
 	return sum;
 }
@@ -149,7 +149,7 @@ void Counter::resize() {
 	delete[] table;
 	table = ntable;
 	cap = ncap;
-
+	cnt = count();//changed
 
 }
 
