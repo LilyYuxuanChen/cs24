@@ -134,7 +134,7 @@ void Counter::resize() {
 
 
 	}
-	for (int i = 0; i < cap; ++i) {
+	/*for (int i = 0; i < cap; ++i) {
 		if (table[i] != NULL) {
 			Node* temp = table[i];
 			Node* t2 = NULL;
@@ -145,7 +145,7 @@ void Counter::resize() {
 			}
 		}
 	}
-	delete[] table;
+	delete[] table;*/
 	table = ntable;
 	cap = ncap;
 
