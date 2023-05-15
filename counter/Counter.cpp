@@ -106,6 +106,7 @@ void Counter::resize() {
 				nn->ps = prev;
 				prev->ns = nn;
 			}
+			ntable[ind] = nn;
 			prev = nn;
 		}
 		else {
@@ -228,9 +229,7 @@ void Counter::del(const std::string& key) {
 		Node* nextchain = t->nc;
 		Node* prevseq = t->ps;
 		Node* nextseq = t->ns;
-		bool n = false;
-		string temp = t->k;
-		                        int currind = h(temp,cap);
+		
 		if (prevchain != NULL && nextchain != NULL) {
 			 prevchain->nc = t->nc;
 			 nextchain->pc = t->pc;
@@ -246,10 +245,9 @@ void Counter::del(const std::string& key) {
 			prevchain->nc = NULL;
 		}
 		else {
-			//string temp = t->k;
-			//int currind = h(temp,cap);
-			n = true;
-			//table[currind] = NULL;
+			string temp = t->k;
+			int currind = h(temp,cap);
+			table[currind] = NULL;
 		}
 		
 
@@ -271,9 +269,6 @@ void Counter::del(const std::string& key) {
 			ibegin->i = NULL;
 		}
 		cnt--;
-		if (n) {
-			table[currind] = NULL;
-		}
 		//delete t;
 	}
 
