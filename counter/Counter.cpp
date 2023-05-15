@@ -60,13 +60,22 @@ Counter::Counter() {
 }
 
 Counter::~Counter() {
-	for (auto j = *ibegin; j != *iend; ++j) {
-		delete j.i;
-	}
-	delete[] table;
 	delete ibegin;
 	delete iend;
 	delete ilast;
+	for (int i = 0; i < cap; ++i) {
+		if (table[i]  != NULL){
+			Node* temp = table[i];
+			Node* t2 = NULL;
+			while (temp != NULL) {
+				t2 = temp->ns;
+				delete temp;
+				temp = t2;
+			}
+		}
+	}
+	delete[] table;
+
 }
 int Counter::get(const std::string& input) const {
 	Node* t = find(input);
@@ -119,9 +128,22 @@ void Counter::resize() {
 		if (j.i->ns == NULL) {
 			ilast->i = nn;
 		}
-		delete j.i;
+		//Node* 
+		//delete j.i;
+		//j.i = j.i->ns; //changed
 
 
+	}
+	for (int i = 0; i < cap; ++i) {
+		if (table[i] != NULL) {
+			Node* temp = table[i];
+			Node* t2 = NULL;
+			while (temp != NULL) {
+				t2 = temp->ns;
+				delete temp;
+				temp = t2;
+			}
+		}
 	}
 	delete[] table;
 	table = ntable;
