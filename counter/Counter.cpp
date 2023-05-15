@@ -257,6 +257,10 @@ void Counter::del(const std::string& key) {
 			prevseq->ns = NULL;
 		
 		}
+		else {
+			ilast->i = NULL;
+			ibegin->i = NULL;
+		}
 		cnt--;
 		delete t;
 	}
