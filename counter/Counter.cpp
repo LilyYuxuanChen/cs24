@@ -201,10 +201,24 @@ void Counter::set(const std::string& key, int count) {
 }
 
 void Counter::inc(const std::string& key, int by) {
-	//
+	Node* t = find(key);
+	if (t == NULL) {
+		set(key, by);
+	}
+	else {
+		t->v += by;
+	}
 }
 void Counter::dec(const std::string& key, int by) {
-	// 
+	Node* t = find(key) ;
+	if (t == NULL) {
+		int temp = 0 - by;
+		set(key, temp);
+	}
+	else {
+		t->v -= by;
+	}
+
 }
 void Counter::del(const std::string& key) {
 	//
