@@ -68,7 +68,7 @@ Counter::~Counter() {
 			Node* temp = table[i];
 			Node* t2 = NULL;
 			while (temp != NULL) {
-				t2 = temp->ns;
+				t2 = temp->nc;
 				delete temp;
 				temp = t2;
 			}
@@ -134,18 +134,18 @@ void Counter::resize() {
 
 
 	}
-	/*for (int i = 0; i < cap; ++i) {
+	for (int i = 0; i < cap; ++i) {
 		if (table[i] != NULL) {
 			Node* temp = table[i];
 			Node* t2 = NULL;
 			while (temp != NULL) {
-				t2 = temp->ns;
+				t2 = temp->nc;
 				delete temp;
 				temp = t2;
 			}
 		}
 	}
-	delete[] table;*/
+	delete[] table;
 	table = ntable;
 	cap = ncap;
 
