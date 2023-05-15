@@ -246,8 +246,8 @@ void Counter::del(const std::string& key) {
 			prevchain->nc = NULL;
 		}
 		else {
-			string temp = t->k;
-			int currind = h(temp,cap);
+			//string temp = t->k;
+			//int currind = h(temp,cap);
 			n = true;
 			//table[currind] = NULL;
 		}
