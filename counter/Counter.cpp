@@ -256,8 +256,8 @@ void Counter::del(const std::string& key) {
 			ilast->i = t->ps;
 			prevseq->ns = NULL;
 		}
-		delete t;
 	}
+
 /*
 		prevchain->nc = t->nc;
 		nextchain->pc = t->pc;
