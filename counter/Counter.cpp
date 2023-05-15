@@ -11,7 +11,7 @@ Counter::Iterator Counter::end() const{
 int Counter::total() const{
 	int sum = 0;
 	for(auto i = this->begin(); i != this->end(); ++i) {
-		sum = sum + i->v;
+		sum = sum + i.value();
 	}
 	return sum;
 }
