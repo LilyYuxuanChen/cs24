@@ -262,7 +262,7 @@ void Counter::del(const std::string& key) {
 			ibegin->i = NULL;
 		}
 		cnt--;
-		delete t;
+		//delete t;
 	}
 
 /*
