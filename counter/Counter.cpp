@@ -113,9 +113,10 @@ void Counter::resize() {
 			Node* k = ntable[ind];
 			while (k != nullptr) {
 				k = k->nc;
-				if (k == NULL) {
+				if (k->nc == NULL) {
 					//Node* nn = new Node(j.i->k, j.i->v);
-					k = nn;
+					k->nc = nn;
+					nn->pc = k;
 					nn->ps = prev;
 					prev->ns = nn;
 					prev = nn;
