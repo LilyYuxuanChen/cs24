@@ -48,7 +48,7 @@ Node* Counter::find(const std::string& key) const{
 
 Counter::Counter() {
 	cnt = 0;
-	cap = 5000;
+	cap = 5;
 	table = new Node*[5000]();
 	ibegin = new Iterator();
 	ibegin->i = nullptr;
