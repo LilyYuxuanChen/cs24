@@ -48,8 +48,8 @@ Node* Counter::find(const std::string& key) const{
 
 Counter::Counter() {
 	cnt = 0;
-	cap = 5000;
-	table = new Node*[5000]();
+	cap = 5;
+	table = new Node*[5]();
 	ibegin = new Iterator();
 	ibegin->i = nullptr;
 	iend = new Iterator();
@@ -118,6 +118,7 @@ void Counter::resize() {
 					//Node* nn = new Node(j.i->k, j.i->v);
 					k = nn;
 					k->pc = prevchain;
+					prevchain->nc = k;
 					k->ps = prev;
 					prev->ns = k;
 					prev = k;
