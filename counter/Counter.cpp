@@ -188,8 +188,9 @@ void Counter::set(const std::string& key, int count) {
 				while (k!= NULL) {
 					if (k->nc == NULL) {
 						k->nc = nn;
-						nn->ps = k;
-						k->ns = nn;
+						nn->pc = k;
+						ilast->i->ns = nn;
+						nn->ps = ilast->i;
 						ilast->i = nn;
 						cnt++;
 						break;
