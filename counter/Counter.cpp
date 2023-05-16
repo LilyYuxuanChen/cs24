@@ -160,7 +160,7 @@ void Counter::resize() {
 }
 
 void Counter::set(const std::string& key, int count) {
-	if ((static_cast<double>(cnt)/cap)>0.7) {
+	if ((static_cast<double>(cnt)/cap)>0.5) {
 		resize();
 	}
 	if (cnt == 0) {
