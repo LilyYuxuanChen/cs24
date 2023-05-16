@@ -94,13 +94,15 @@ void Counter::resize() {
 	int ncap = cap + cap;
 	Node** ntable = new Node*[ncap]();
 	Node* prev  = NULL;
+	Node* begin = NULL;
+
 	for (auto j = *ibegin; j != *iend; ++j) {
 		int ind = h(j.i->k, ncap);
 		Node* nn = new Node(j.i->k, j.i->v);
 		if (ntable[ind] == NULL) {
 			//Node* nn = new Node(j.i->k, j.i->v);
 			if (prev == NULL) {
-				ibegin->i = nn;
+				begin = nn;
 			}
 			else {
 				nn->ps = prev;
@@ -137,7 +139,7 @@ void Counter::resize() {
 		//delete j.i;
 		//j.i = j.i->ns; //changed
 
-
+	ibegin->i = begin;
 	}
 	for (int i = 0; i < cap; ++i) {
 		if (table[i] != NULL) {
