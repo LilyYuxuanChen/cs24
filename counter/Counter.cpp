@@ -138,9 +138,9 @@ void Counter::resize() {
 		//Node* 
 		//delete j.i;
 		//j.i = j.i->ns; //changed
-
-	ibegin->i = begin;
 	}
+	ibegin->i = begin;
+	
 	for (int i = 0; i < cap; ++i) {
 		if (table[i] != NULL) {
 			Node* temp = table[i];
