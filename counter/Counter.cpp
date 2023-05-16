@@ -48,8 +48,8 @@ Node* Counter::find(const std::string& key) const{
 
 Counter::Counter() {
 	cnt = 0;
-	cap = 500000000000;
-	table = new Node*[500000000000]();
+	cap = 2147483647;
+	table = new Node*[2147483647]();
 	ibegin = new Iterator();
 	ibegin->i = nullptr;
 	iend = new Iterator();
