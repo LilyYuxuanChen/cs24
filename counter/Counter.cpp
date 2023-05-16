@@ -205,8 +205,9 @@ void Counter::set(const std::string& key, int count) {
 
 		}
 		else {
+			tot -= temp-v;
 			temp->v = count;
-			tot += temp->v;
+			tot += count;
 		}
 
 	}
