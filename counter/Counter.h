@@ -35,6 +35,7 @@ private:
   Iterator* ibegin;
   Iterator* ilast;
   Iterator* iend;
+  int tot;
  
 
 private:

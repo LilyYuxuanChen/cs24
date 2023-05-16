@@ -9,11 +9,11 @@ Counter::Iterator Counter::end() const{
 }
 
 int Counter::total() const{
-	int sum = 0;
-	for(auto i = this->begin(); i != this->end(); ++i) {
-		sum = sum + i.value();
-	}
-	return sum;
+	//int sum = 0;
+	//for(auto i = this->begin(); i != this->end(); ++i) {
+	//	sum = sum + i.value();
+	//}
+	return tot;
 }
 
 int Counter::h(const std::string& key, int max) const {
@@ -47,6 +47,7 @@ Node* Counter::find(const std::string& key) const{
 }
 
 Counter::Counter() {
+	tot = 0;
 	cnt = 0;
 	cap = 5;
 	table = new Node*[5]();
@@ -169,6 +170,7 @@ void Counter::set(const std::string& key, int count) {
 		ibegin->i = nn;
 		ilast->i = nn;
 		++cnt;
+		tot += count;
 	}
 	else {
 		int ind = h(key,cap);
@@ -182,6 +184,7 @@ void Counter::set(const std::string& key, int count) {
 				nn->ps = ilast->i;
 				ilast->i = nn;
 				cnt++;
+				tot += count;
 			}
 			else {
 				Node* k = table[ind];
@@ -193,6 +196,7 @@ void Counter::set(const std::string& key, int count) {
 						nn->ps = ilast->i;
 						ilast->i = nn;
 						cnt++;
+						tot += count;
 						break;
 					}
 					k = k->nc;
@@ -202,6 +206,7 @@ void Counter::set(const std::string& key, int count) {
 		}
 		else {
 			temp->v = count;
+			tot += temp->v;
 		}
 
 	}
@@ -214,6 +219,7 @@ void Counter::inc(const std::string& key, int by) {
 	}
 	else {
 		t->v += by;
+		tot += by;
 	}
 }
 void Counter::dec(const std::string& key, int by) {
@@ -224,13 +230,14 @@ void Counter::dec(const std::string& key, int by) {
 	}
 	else {
 		t->v -= by;
+		tot += by;
 	}
 
 }
 void Counter::del(const std::string& key) {
 	Node* t = find(key);
 	if (t != NULL) {
-		t->v = 0;
+		//t->v = 0;
 		Node* prevchain = t->pc;
 		Node* nextchain = t->nc;
 		Node* prevseq = t->ps;
@@ -275,6 +282,7 @@ void Counter::del(const std::string& key) {
 			ibegin->i = NULL;
 		}
 		cnt--;
+		tot -= t->v;
 		delete t;
 	}
 
