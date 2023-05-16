@@ -230,7 +230,7 @@ void Counter::dec(const std::string& key, int by) {
 	}
 	else {
 		t->v -= by;
-		tot += by;
+		tot -= by;
 	}
 
 }
