@@ -84,7 +84,7 @@ Heap::Entry Heap::pop() {
 					mData[left] = temp;
 					loc = left;
 				}
-				else if (mData[left].score = mData[right].score) {
+				else if (mData[left].score == mData[right].score) {
 					Entry temp;
 					temp = mData[loc];
 					mData[loc] = mData[left];
@@ -139,12 +139,12 @@ void Heap::push(const std::string& value, float score) {
 		throw std::overflow_error("no space");
 	}
 	else {
-		Entry inp = new Entry;
+		Entry inp;
 		inp.value = value;
 		inp.score = score;
 		mCount++;
 		mData[mCount-1] = inp;
-		index = mCount-1;
+		size_t index = mCount-1;
 		while(index != 0) {
 			if (mData[(index-1)/2].score > score) {
 				Entry temp;
