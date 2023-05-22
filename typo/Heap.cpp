@@ -135,9 +135,33 @@ Heap::Entry Heap::pushpop(const std::string& value, float score) {
 }
 
 void Heap::push(const std::string& value, float score) {
-
+	if (mCapacity < mCount +1) {
+		throw std::overflow_error("no space");
+	}
+	else {
+		Entry inp = new Entry;
+		inp.value = value;
+		inp.score = score;
+		mCount++;
+		mData[mCount-1] = inp;
+		index = mCount-1;
+		while(index != 0) {
+			if (mData[(index-1)/2].score > score) {
+				Entry temp;
+				temp = mData[(index-1)/2];
+				mData[(index-1)/2] = mData[index];
+				mData[index] = mData[(index-1)/2];
+				index = (index-1)/2;
+			}
+		}
+	}
 }
 
 const Heap::Entry& Heap::top() const {
-	return mData[0];
+	if (mCount == 0) {
+		throw std::underflow_error("no items in the heap");
+	}
+	else {
+		return mData[0];
+	}
 }
