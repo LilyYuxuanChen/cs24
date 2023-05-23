@@ -50,6 +50,8 @@ const Heap::Entry& Heap::lookup(size_t index) const {
 }
 
 Heap::Entry Heap::pop() {
+	Entry t;
+	return t;
 /*	if (mCount == 0) {
 		throw std::underflow_error("empty");
 	}
@@ -127,7 +129,6 @@ Heap::Entry Heap::pop() {
 	}
 return r;
 }*/
-}
 }
 
 Heap::Entry Heap::pushpop(const std::string& value, float score) {
