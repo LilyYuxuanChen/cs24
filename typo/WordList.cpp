@@ -37,11 +37,11 @@ Heap WordList::correct(const std::vector<Point>& points, size_t maxcount, float 
 			int idx = val -97;
 			float s = 1/ (10 * pow(sqrt(pow(QWERTY[idx].x-points[k].x, 2)+pow(QWERTY[idx].y-points[k].y, 2)), 2) +1);
 			tot += s;
-			k++
+			k++;
 		}
 		float avg = tot/l;
 		if (avg > cutoff) {
-			if (h->mCount >= h->mCapacity) {
+			if (h->Count() >= h->Capacity()) {
 				if (h->top().score < avg) {
 					h->pushpop(wl[i], avg);
 				}
