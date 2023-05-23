@@ -201,7 +201,9 @@ Heap::Entry Heap::pushpop(const std::string& value, float score) {
 		mCount++;
 		mData[mCount-1].value = value;
 		mData[mCount-1].score = score;
-		return pop();
+		Entry ret = mData[0];
+		pop();
+		return ret;
 	}
 	else {
 		throw std::underflow_error("k");
