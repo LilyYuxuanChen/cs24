@@ -197,8 +197,18 @@ return r;
 }
 
 Heap::Entry Heap::pushpop(const std::string& value, float score) {
-	Entry temp;
-	return temp;
+	if (mCount != 0) {
+		mCount++;
+		mData[mCount-1].value = value;
+		mData[mCount-1].score = score;
+		return pop();
+	}
+	else {
+		throw std::underflow_error("k");
+
+
+	}
+
 }
 
 void Heap::push(const std::string& value, float score) {
