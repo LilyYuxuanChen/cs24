@@ -56,14 +56,14 @@ Heap::Entry Heap::pop() {
 	else {
 		Entry ret = mData[0];
 		if (mCount == 1) {
-			mData[0].value = "";
-			mData[0].score = 0;
+			//mData[0].value = "";
+			//mData[0].score = 0;
 			mCount = 0;
 		}
 		else {
 			mData[0] = mData[mCount-1];
-			mData[mCount-1].value = "";
-			mData[mCount-1].score = "0";
+			//mData[mCount-1].value = "";
+			//mData[mCount-1].score = "0";
 			mCount--;
 			size_t index = 0;
 			while ((index * 2 +1) < mCount) {
