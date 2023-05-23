@@ -50,11 +50,69 @@ const Heap::Entry& Heap::lookup(size_t index) const {
 }
 
 Heap::Entry Heap::pop() {
-	Entry t;
-	return t;
-/*	if (mCount == 0) {
+	if (mCount == 0) {
 		throw std::underflow_error("empty");
 	}
+	else {
+		Entry ret = mData[0];
+		if (mCount == 1) {
+			mData[0].value = NULL;
+			mData[0].score = 0;
+			mCount = 0;
+		}
+		else {
+			mData[0] = mData[mCount-1];
+			mData[mCount-1].value = NULL;
+			mData[mCount-1].score = "0";
+			mCount--;
+			size_t index = 0;
+			while ((index * 2 +1) < mCount) {
+				if ((index * 2 +2)>= mCount) {
+					//one left child
+					if (mData[index *2 +1].score >= mData[index].score) {
+						break;
+					}
+					else {
+						Entry temp = mData[index];
+						mData[index] = mData[index*2+1];
+						mData[index *2 +1] = temp;
+					}
+				}
+				else {
+					//two children
+					if (mData[index*2+1].score >= mData[index].score && mData[index*2+2].score >= mData[index].score) {
+						break;
+					}
+					else if (mData[index*2+1].score < mData[index].score && mData[index*2+2].score < mData[index].score) {
+						if (mData[index*2+1].score > mData[index*2+2].score) {
+							Entry temp = mData[index];
+							mData[index] = mData[index*2+2];
+							mData[index*2+2] = temp;
+						}
+						else {
+							Entry temp = mData[index];
+							mData[index] = mData[index*2+1];
+							mData[index*2+1] = temp;
+						}
+
+					}
+					else if (mData[index*2+1].score < mData[index]){
+						Entry temp = mData[index];
+						mData[index] = mData[index*2+1];
+						mData[index*2+1] = temp;
+					}
+					else {
+						Entry temp = mData[index];
+						mData[index] = mData[index*2+2];
+						mData[index*2+2] = temp;
+					}
+				}
+			}
+			return ret;
+		}
+	}
+
+/*
 	else {
 		Entry r = mData[0];
 		mData[0] = mData[mCount-1];
