@@ -212,7 +212,7 @@ Heap::Entry Heap::pushpop(const std::string& value, float score) {
 }
 
 void Heap::push(const std::string& value, float score) {
-	if (mCapacity < mCount +1) {
+	if (mCapacity == mCount) {
 		throw std::overflow_error("no space");
 	}
 	else {
@@ -229,6 +229,9 @@ void Heap::push(const std::string& value, float score) {
 				mData[(index-1)/2] = mData[index];
 				mData[index] = mData[(index-1)/2];
 				index = (index-1)/2;
+			}
+			else {
+				break;
 			}
 		}
 	}
