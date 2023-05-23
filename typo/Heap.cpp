@@ -42,7 +42,7 @@ size_t Heap::count() const {
 
 const Heap::Entry& Heap::lookup(size_t index) const {
 	if (index >= mCount) {
-		throw std::underflow_error("out of range");
+		throw std::out_of_range("out of range");
 	}
 	else {
 		return mData[index];
