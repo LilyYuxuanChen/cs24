@@ -56,7 +56,7 @@ Heap::Entry Heap::pop() {
 	else {
 		Entry ret = mData[0];
 		if (mCount == 1) {
-			mData[0].value = NULL;
+			mData[0].value = "";
 			mData[0].score = 0;
 			mCount = 0;
 		}
