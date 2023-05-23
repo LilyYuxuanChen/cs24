@@ -227,7 +227,7 @@ void Heap::push(const std::string& value, float score) {
 				Entry temp;
 				temp = mData[(index-1)/2];
 				mData[(index-1)/2] = mData[index];
-				mData[index] = mData[(index-1)/2];
+				mData[index] = temp; 
 				index = (index-1)/2;
 			}
 			else {
