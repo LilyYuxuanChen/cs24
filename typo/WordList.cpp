@@ -41,7 +41,7 @@ Heap WordList::correct(const std::vector<Point>& points, size_t maxcount, float 
 		}
 		float avg = tot/l;
 		if (avg > cutoff) {
-			if (h->Count() >= h->Capacity()) {
+			if (h->count() >= h->capacity()) {
 				if (h->top().score < avg) {
 					h->pushpop(wl[i], avg);
 				}
