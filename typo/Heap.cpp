@@ -198,11 +198,14 @@ return r;
 
 Heap::Entry Heap::pushpop(const std::string& value, float score) {
 	if (mCount != 0) {
-		mCount++;
+/*		mCount++;
 		mData[mCount-1].value = value;
 		mData[mCount-1].score = score;
+*/		
+
 		Entry ret = mData[0];
 		pop();
+		push(value, score);
 		return ret;
 	}
 	else {
