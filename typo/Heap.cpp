@@ -62,7 +62,7 @@ Heap::Entry Heap::pop() {
 		}
 		else {
 			mData[0] = mData[mCount-1];
-			mData[mCount-1].value = NULL;
+			mData[mCount-1].value = "";
 			mData[mCount-1].score = "0";
 			mCount--;
 			size_t index = 0;
@@ -76,6 +76,7 @@ Heap::Entry Heap::pop() {
 						Entry temp = mData[index];
 						mData[index] = mData[index*2+1];
 						mData[index *2 +1] = temp;
+						index = index*2+1;
 					}
 				}
 				else {
@@ -88,29 +89,35 @@ Heap::Entry Heap::pop() {
 							Entry temp = mData[index];
 							mData[index] = mData[index*2+2];
 							mData[index*2+2] = temp;
+							index = index*2+2;
 						}
 						else {
 							Entry temp = mData[index];
 							mData[index] = mData[index*2+1];
 							mData[index*2+1] = temp;
+							index = index*2+1;
 						}
 
 					}
-					else if (mData[index*2+1].score < mData[index]){
+					else if (mData[index*2+1].score < mData[index].score){
 						Entry temp = mData[index];
 						mData[index] = mData[index*2+1];
 						mData[index*2+1] = temp;
+						index = index*2+1;
 					}
 					else {
 						Entry temp = mData[index];
 						mData[index] = mData[index*2+2];
 						mData[index*2+2] = temp;
+						index = index*2+2;
 					}
 				}
 			}
-			return ret;
+		
 		}
+		return ret;
 	}
+	
 
 /*
 	else {
