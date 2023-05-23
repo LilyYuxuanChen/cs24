@@ -128,6 +128,7 @@ Heap::Entry Heap::pop() {
 return r;
 }*/
 }
+}
 
 Heap::Entry Heap::pushpop(const std::string& value, float score) {
 	Entry temp;
