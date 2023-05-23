@@ -197,15 +197,84 @@ return r;
 }
 
 Heap::Entry Heap::pushpop(const std::string& value, float score) {
-	if (mCount != 0) {
-/*		mCount++;
+
+if(mCount == 0) {
+	throw std::underflow_error("empty");
+}
+else {
+	Entry ret = mData[0];
+	if (mCount == 1) {
+		mData[0].value = value;
+		mData[0].score = score;
+	}
+	else {
+		mData[0].value = value;
+		mData[0].score = score;
+		size_t index = 0;
+					while ((index * 2 +1) < mCount) {
+										if ((index * 2 +2)>= mCount) {
+																if (mData[index *2 +1].score >= mData[index].score) {
+																							break;
+																												}
+																					else {
+																												Entry temp = mData[index];
+																																		mData[index] = mData[index*2+1];
+																																								mData[index *2 +1] = temp;
+																																														index = index*2+1;
+																																																			}
+																									}
+														else {
+																				if (mData[index*2+1].score >= mData[index].score && mData[index*2+2].score >= mData[index].score) {
+																											break;
+																																}
+																									else if (mData[index*2+1].score < mData[index].score && mData[index*2+2].score < mData[index].score) {
+																																if (mData[index*2+1].score > mData[index*2+2].score) {
+																																								Entry temp = mData[index];
+																																															mData[index] = mData[index*2+2];
+																																																						mData[index*2+2] = temp;
+																																																													index = index*2+2;
+																																																																			}
+																																						else {
+																																														Entry temp = mData[index];
+																																																					mData[index] = mData[index*2+1];
+																																																												mData[index*2+1] = temp;
+																																																																			index = index*2+1;
+																																																																									}
+
+																																											}
+																														else if (mData[index*2+1].score < mData[index].score){
+																																					Entry temp = mData[index];
+																																											mData[index] = mData[index*2+1];
+																																																	mData[index*2+1] = temp;
+																																																							index = index*2+1;
+																																																												}
+																																			else {
+																																										Entry temp = mData[index];
+																																																mData[index] = mData[index*2+2];
+																																																						mData[index*2+2] = temp;
+																																																												index = index*2+2;
+																																																																	}
+																																							}
+																	}
+							
+							}
+			return ret;
+	}
+
+
+
+
+
+}
+
+
+
+/*	if (mCount != 0) {
+		mCount++;
 		mData[mCount-1].value = value;
 		mData[mCount-1].score = score;
-*/		
-
 		Entry ret = mData[0];
 		pop();
-		push(value, score);
 		return ret;
 	}
 	else {
@@ -213,7 +282,7 @@ Heap::Entry Heap::pushpop(const std::string& value, float score) {
 
 
 	}
-
+*/
 }
 
 void Heap::push(const std::string& value, float score) {
