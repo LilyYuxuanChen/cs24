@@ -2,11 +2,25 @@
 #include <memory>
 #include <cmath>
 #include <string>
+#include <sstream>
 using namespace std;
 
-WordList::WordList(std::istream& stream) {
+WordList::WordList(std::istream& stream) {	
+
+	string ln;
+	while (getline(stream, ln)) {
+		if (ln[0] == '#') {
+			continue;
+		}
+		else {
+			istringstream iss (ln);
+
+	
+	
+	
+
 	string wd;
-	while (stream >> wd) {
+	while (iss >> wd) {
 		bool L = true;
 		for (char c : wd) {
 			if (!(islower(c))) {
@@ -19,6 +33,8 @@ WordList::WordList(std::istream& stream) {
 		}
 	}
 
+		}
+}
 }
 Heap WordList::correct(const std::vector<Point>& points, size_t maxcount, float cutoff) const {
 	size_t l = points.size();
